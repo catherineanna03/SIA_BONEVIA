@@ -1,0 +1,3375 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="artifact-type" content="narrative">
+  <meta name="design-style" content="canopy">
+  <title>BONEVIA — Pupuk Limbah Tulang Ayam Organik | Natural Nutrition. Sustainable Future.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Nunito+Sans:wght@400;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@1.43.0/dist/umd/lucide.min.js"></script>
+  <style>
+    :root {
+      color-scheme: light;
+
+      /* Palette BONEVIA Modern-Hijau + Canopy Organic Layers */
+      --background: #f7faf7;
+      --surface-card: #ffffff;
+      --surface-container-low: #eef5ef;
+      --surface-container: #e2ede4;
+      --surface-container-high: #d0e3d4;
+
+      /* Ink */
+      --on-surface: #1b4332;
+      --on-surface-body: #243b2f;
+      --on-surface-variant: #466353;
+
+      /* Rules & Borders */
+      --outline: #8fb39d;
+      --outline-variant: #cfe2d4;
+
+      /* Brand Accents */
+      --primary: #1b4332;
+      --primary-mid: #2d6a4f;
+      --primary-bright: #52b788;
+      --on-primary: #ffffff;
+      --primary-container: #d8f3dc;
+      --on-primary-container: #1b4332;
+
+      /* Olive & Bone Logo Accents */
+      --olive: #5f7a38;
+      --olive-light: #809e4e;
+      --olive-container: #ebf2de;
+      --on-olive-container: #384a1e;
+      --bone-ivory: #f8f5ec;
+      --bone-shade: #e7e1d1;
+
+      /* Warm Agricultural Secondary */
+      --tertiary: #7d4e1d;
+      --tertiary-container: #f5e6cf;
+      --on-tertiary-container: #5c3711;
+
+      /* Semantic */
+      --positive: #2d6a4f;
+      --warning: #8f5822;
+      --error: #b83230;
+      --on-error: #ffffff;
+      --focus: #2d6a4f;
+
+      /* Data Series */
+      --data-1: #1b4332;
+      --data-2: #2d6a4f;
+      --data-3: #52b788;
+      --data-4: #5f7a38;
+      --data-context: #b7c9bd;
+
+      /* Typography */
+      --font-headline: 'Plus Jakarta Sans', 'Nunito Sans', sans-serif;
+      --font-body: 'Nunito Sans', sans-serif;
+      --font-label: 'Geist Mono', monospace;
+
+      --display-size: clamp(2.15rem, 1.35rem + 3.1vw, 3.5rem);
+      --headline-size: clamp(1.625rem, 1.2rem + 1.7vw, 2.35rem);
+      --subhead-size: clamp(1.125rem, 1.02rem + 0.45vw, 1.375rem);
+      --body-size: clamp(1rem, 0.96rem + 0.18vw, 1.0625rem);
+      --label-size: clamp(0.75rem, 0.72rem + 0.12vw, 0.8125rem);
+
+      /* Spacing Scale */
+      --space-xs: 0.25rem;
+      --space-sm: 0.5rem;
+      --space-md: 1rem;
+      --space-lg: 1.5rem;
+      --space-xl: 2.5rem;
+      --space-2xl: 4rem;
+      --space-3xl: 5.5rem;
+
+      /* Radii & Effects */
+      --rounded-sm: 0.5rem;
+      --rounded: 0.75rem;
+      --rounded-lg: 1.25rem;
+      --rounded-xl: 1.75rem;
+      --rounded-full: 9999px;
+
+      --shadow-soft: 0 6px 24px rgb(27 67 50 / 0.06);
+      --shadow-soft-hover: 0 12px 32px rgb(27 67 50 / 0.11);
+      --shadow-modal: 0 24px 64px rgb(27 67 50 / 0.22);
+      --backdrop-scrim: rgb(27 67 50 / 0.52);
+      --border-soft: 1px solid var(--outline-variant);
+      --focus-glow: 0 0 0 3px rgb(45 106 79 / 0.28);
+
+      /* Motion */
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+      --dur-micro: 120ms;
+      --dur-short: 220ms;
+      --dur-long: 420ms;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      overflow-x: clip;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--background);
+      color: var(--on-surface-body);
+      font-family: var(--font-body);
+      font-size: var(--body-size);
+      line-height: 1.62;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      position: static !important;
+      background-color: var(--surface-card);
+      border-bottom: var(--border-soft);
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding-inline: var(--space-lg);
+    }
+
+    .container * {
+      min-width: 0;
+    }
+
+    /* Top Tagline Ribbon (majoo-inspired announcement strip) */
+    .top-ribbon {
+      background-color: var(--primary);
+      color: var(--on-primary);
+      padding: var(--space-sm) var(--space-md);
+      font-size: var(--label-size);
+    }
+
+    .top-ribbon-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-sm);
+    }
+
+    .ribbon-tagline {
+      font-family: var(--font-label);
+      letter-spacing: 0.04em;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .ribbon-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: var(--rounded-full);
+      background-color: var(--primary-bright);
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    .ribbon-sub {
+      color: var(--primary-container);
+      font-weight: 600;
+    }
+
+    /* Main Header Navigation */
+    .nav-bar {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: var(--space-md) var(--space-lg);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-md);
+    }
+
+    .brand-lockup {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+      text-decoration: none;
+    }
+
+    .brand-text-group {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+
+    .brand-name {
+      font-family: var(--font-headline);
+      font-weight: 800;
+      font-size: 1.375rem;
+      letter-spacing: -0.02em;
+      color: var(--primary);
+    }
+
+    .brand-slogan {
+      font-family: var(--font-label);
+      font-size: 0.6875rem;
+      letter-spacing: 0.05em;
+      color: var(--olive);
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--on-surface-body);
+      font-weight: 600;
+      font-size: 0.9375rem;
+      padding: var(--space-sm) var(--space-md);
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      border-radius: var(--rounded-full);
+      transition: background-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out);
+    }
+
+    .nav-link:hover {
+      background-color: var(--primary-container);
+      color: var(--primary);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-sm);
+      min-height: 44px;
+      padding: 0.65rem 1.35rem;
+      border-radius: var(--rounded-full);
+      font-weight: 700;
+      font-size: 0.9375rem;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: background-color var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out), box-shadow var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out);
+    }
+
+    .btn:active {
+      transform: translateY(1px);
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: var(--on-primary);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-mid);
+      box-shadow: var(--shadow-soft-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background-color: var(--primary-container);
+      color: var(--on-primary-container);
+      border-color: var(--outline-variant);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--surface-container-high);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background-color: var(--surface-card);
+      color: var(--primary);
+      border-color: var(--outline);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--surface-container-low);
+    }
+
+    .btn-sm {
+      min-height: 44px;
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+    }
+
+    .btn-danger-outline {
+      background-color: var(--surface-card);
+      color: var(--error);
+      border-color: var(--outline-variant);
+    }
+
+    .btn-danger-outline:hover {
+      background-color: var(--tertiary-container);
+    }
+
+    /* Typography Helpers */
+    .section-eyebrow {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--olive);
+      margin: 0 0 var(--space-sm) 0;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .section-title {
+      font-family: var(--font-headline);
+      font-size: var(--headline-size);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--primary);
+      margin: 0 0 var(--space-md) 0;
+    }
+
+    .section-lede {
+      font-size: var(--subhead-size);
+      color: var(--on-surface-variant);
+      max-width: 65ch;
+      margin: 0;
+      line-height: 1.55;
+    }
+
+    .section-header {
+      margin-bottom: var(--space-xl);
+    }
+
+    .section-band {
+      padding-block: var(--space-2xl);
+    }
+
+    .section-band.alt {
+      background-color: var(--surface-container-low);
+    }
+
+    /* Hero Section */
+    .hero-section {
+      padding-block: var(--space-xl) var(--space-2xl);
+      background: linear-gradient(180deg, var(--surface-card) 0%, var(--background) 100%);
+      border-bottom: var(--border-soft);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr);
+      gap: var(--space-xl);
+      align-items: center;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+      background-color: var(--primary-container);
+      color: var(--on-primary-container);
+      padding: var(--space-xs) var(--space-md);
+      border-radius: var(--rounded-full);
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 600;
+      margin-bottom: var(--space-md);
+    }
+
+    .hero-title {
+      font-family: var(--font-headline);
+      font-size: var(--display-size);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+      color: var(--primary);
+      margin: 0 0 var(--space-md) 0;
+    }
+
+    .hero-title-accent {
+      color: var(--primary-mid);
+    }
+
+    .hero-desc {
+      font-size: var(--subhead-size);
+      color: var(--on-surface-variant);
+      max-width: 58ch;
+      margin: 0 0 var(--space-lg) 0;
+    }
+
+    .hero-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-xl);
+    }
+
+    .highlight-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+      background-color: var(--surface-card);
+      border: var(--border-soft);
+      padding: var(--space-xs) var(--space-md);
+      border-radius: var(--rounded-full);
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-md);
+    }
+
+    /* Hero Product Card (Canopy pale-leaf highlight + SaaS showcase card) */
+    .hero-showcase-card {
+      background-color: var(--primary-container);
+      color: var(--on-primary-container);
+      border-radius: var(--rounded-xl);
+      padding: var(--space-xl);
+      box-shadow: var(--shadow-soft);
+      border: var(--border-soft);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+
+    .showcase-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-md);
+      flex-wrap: wrap;
+    }
+
+    .showcase-badge {
+      background-color: var(--primary);
+      color: var(--on-primary);
+      font-family: var(--font-label);
+      font-size: 0.75rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--rounded-full);
+      font-weight: 600;
+    }
+
+    .nutrient-duo {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-md);
+    }
+
+    .nutrient-mini-card {
+      background-color: var(--surface-card);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-md);
+      border: var(--border-soft);
+    }
+
+    .nutrient-formula {
+      font-family: var(--font-label);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--olive);
+      margin-bottom: var(--space-xs);
+    }
+
+    .nutrient-name {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 1.0625rem;
+      color: var(--primary);
+      margin: 0 0 var(--space-xs) 0;
+    }
+
+    .nutrient-role {
+      font-size: 0.875rem;
+      color: var(--on-surface-variant);
+      margin: 0;
+      line-height: 1.45;
+    }
+
+    /* Canopy-inspired Phenology / Circular Cycle Strip */
+    .cycle-strip {
+      background-color: var(--surface-card);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-md);
+      border: var(--border-soft);
+    }
+
+    .cycle-strip-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: var(--space-sm);
+      gap: var(--space-sm);
+      flex-wrap: wrap;
+    }
+
+    .cycle-strip-label {
+      font-family: var(--font-label);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .cycle-steps {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: var(--space-xs);
+    }
+
+    .cycle-step {
+      background-color: var(--surface-container-low);
+      border-radius: var(--rounded-sm);
+      padding: var(--space-sm) var(--space-xs);
+      text-align: center;
+      font-family: var(--font-label);
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .cycle-step.is-active {
+      background-color: var(--primary-bright);
+      color: var(--primary);
+    }
+
+    /* Trust / Category Quick Strip */
+    .pillars-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+      gap: var(--space-md);
+      margin-top: var(--space-xl);
+    }
+
+    .pillar-item {
+      background-color: var(--surface-card);
+      border: var(--border-soft);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-md) var(--space-lg);
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-md);
+      transition: transform var(--dur-short) var(--ease-out), box-shadow var(--dur-short) var(--ease-out);
+    }
+
+    .pillar-item:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .icon-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--rounded);
+      background-color: var(--primary-container);
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .icon-badge.is-bright {
+      background-color: var(--primary-bright);
+      color: var(--primary);
+    }
+
+    .icon-badge.is-olive {
+      background-color: var(--olive-container);
+      color: var(--on-olive-container);
+    }
+
+    .pillar-title {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--primary);
+      margin: 0 0 0.2rem 0;
+    }
+
+    .pillar-text {
+      font-size: 0.875rem;
+      color: var(--on-surface-variant);
+      margin: 0;
+      line-height: 1.45;
+    }
+
+    /* Mascot Section: Meet Sahabat BONEVIA */
+    .mascot-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+      gap: var(--space-xl);
+      align-items: start;
+    }
+
+    .mascot-selector-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-sm);
+    }
+
+    .mascot-btn {
+      width: 100%;
+      min-height: 64px;
+      text-align: left;
+      background-color: var(--surface-card);
+      border: var(--border-soft);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-md);
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      cursor: pointer;
+      transition: background-color var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out), box-shadow var(--dur-short) var(--ease-out);
+    }
+
+    .mascot-btn:hover {
+      background-color: var(--surface-container-low);
+      transform: translateX(3px);
+    }
+
+    .mascot-btn.is-active {
+      background-color: var(--primary-container);
+      box-shadow: var(--shadow-soft);
+      border-color: var(--primary-mid);
+    }
+
+    .mascot-thumb {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--rounded);
+      background-color: var(--background);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border: var(--border-soft);
+    }
+
+    .mascot-btn-name {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 1.0625rem;
+      color: var(--primary);
+      display: block;
+    }
+
+    .mascot-btn-role {
+      font-size: 0.875rem;
+      color: var(--on-surface-variant);
+      display: block;
+    }
+
+    .mascot-spotlight {
+      background-color: var(--surface-card);
+      border-radius: var(--rounded-xl);
+      border: var(--border-soft);
+      padding: var(--space-xl);
+      box-shadow: var(--shadow-soft);
+      container-type: inline-size;
+    }
+
+    .mascot-spotlight-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 210px) minmax(0, 1fr);
+      gap: var(--space-xl);
+      align-items: center;
+    }
+
+    .mascot-stage {
+      background: radial-gradient(circle at center, var(--primary-container) 0%, var(--surface-container-low) 75%);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 220px;
+      border: var(--border-soft);
+    }
+
+    .mascot-tag {
+      display: inline-block;
+      background-color: var(--olive-container);
+      color: var(--on-olive-container);
+      font-family: var(--font-label);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.3rem 0.75rem;
+      border-radius: var(--rounded-full);
+      margin-bottom: var(--space-sm);
+    }
+
+    .mascot-detail-title {
+      font-family: var(--font-headline);
+      font-size: 1.625rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin: 0 0 var(--space-xs) 0;
+    }
+
+    .mascot-motto {
+      font-weight: 700;
+      color: var(--primary-mid);
+      margin: 0 0 var(--space-md) 0;
+      font-size: 1.0625rem;
+    }
+
+    .mascot-story {
+      margin: 0 0 var(--space-md) 0;
+      color: var(--on-surface-body);
+    }
+
+    .mascot-tip-box {
+      background-color: var(--surface-container-low);
+      border-left: 4px solid var(--primary-bright);
+      padding: var(--space-md);
+      border-radius: 0 var(--rounded) var(--rounded) 0;
+      margin-bottom: var(--space-lg);
+    }
+
+    .mascot-tip-label {
+      font-family: var(--font-label);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--primary);
+      font-weight: 600;
+      display: block;
+      margin-bottom: var(--space-xs);
+    }
+
+    .mascot-nav-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-md);
+      flex-wrap: wrap;
+    }
+
+    .mascot-counter {
+      font-family: var(--font-label);
+      font-size: 0.8125rem;
+      color: var(--on-surface-variant);
+    }
+
+    /* Product Core Section & Interactive Tabs */
+    .product-core-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+      gap: var(--space-lg);
+      margin-bottom: var(--space-xl);
+    }
+
+    .card {
+      background-color: var(--surface-card);
+      border: var(--border-soft);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-lg);
+      transition: transform var(--dur-short) var(--ease-out), box-shadow var(--dur-short) var(--ease-out);
+    }
+
+    .card.is-interactive:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-soft-hover);
+    }
+
+    .card.is-leaf-highlight {
+      background-color: var(--primary-container);
+      color: var(--on-primary-container);
+    }
+
+    .core-card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-md);
+      margin-bottom: var(--space-md);
+    }
+
+    .formula-pill {
+      font-family: var(--font-label);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      padding: 0.3rem 0.75rem;
+      border-radius: var(--rounded-full);
+      background-color: var(--primary-bright);
+      color: var(--primary);
+    }
+
+    .card-title {
+      font-family: var(--font-headline);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 0 0 var(--space-sm) 0;
+    }
+
+    .bullet-list {
+      margin: var(--space-md) 0 0 0;
+      padding-left: 1.2rem;
+      display: grid;
+      gap: var(--space-xs);
+    }
+
+    .bullet-list li {
+      color: var(--on-surface-body);
+    }
+
+    /* Interactive Product Explorer Tabs + Modal Trigger Bar */
+    .explorer-shell {
+      background-color: var(--surface-card);
+      border: var(--border-soft);
+      border-radius: var(--rounded-xl);
+      padding: var(--space-xl);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .explorer-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-md);
+      padding-bottom: var(--space-lg);
+      border-bottom: var(--border-soft);
+      margin-bottom: var(--space-lg);
+    }
+
+    .tab-group {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: var(--space-xs);
+      background-color: var(--surface-container-low);
+      padding: var(--space-xs);
+      border-radius: var(--rounded-full);
+    }
+
+    .tab-btn {
+      min-height: 44px;
+      padding: 0.5rem 1.25rem;
+      border-radius: var(--rounded-full);
+      border: 0;
+      background-color: transparent;
+      color: var(--on-surface-variant);
+      font-weight: 700;
+      font-size: 0.9375rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+      transition: background-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out);
+    }
+
+    .tab-btn:hover {
+      color: var(--primary);
+    }
+
+    .tab-btn.is-active {
+      background-color: var(--primary);
+      color: var(--on-primary);
+    }
+
+    .modal-triggers {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+    }
+
+    .tab-panel {
+      display: none;
+    }
+
+    .tab-panel.is-active {
+      display: block;
+    }
+
+    /* Benefits 4-Card Grid */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+      gap: var(--space-md);
+      margin-bottom: var(--space-xl);
+    }
+
+    .benefit-card {
+      background-color: var(--surface-container-low);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-lg);
+      border: var(--border-soft);
+    }
+
+    /* Slow-Release Profile Comparison Diagram */
+    .release-viz-box {
+      background-color: var(--surface-container-low);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-lg);
+      border: var(--border-soft);
+    }
+
+    .release-viz-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: var(--space-md);
+      margin-bottom: var(--space-md);
+    }
+
+    .legend-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-md);
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+
+    .legend-swatch {
+      width: 14px;
+      height: 14px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    .legend-swatch.is-bonevia {
+      background-color: var(--primary);
+    }
+
+    .legend-swatch.is-synthetic {
+      background-color: var(--data-context);
+    }
+
+    /* Usage & Dose Interactive Guide */
+    .guide-filters {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+      gap: var(--space-lg);
+      margin-bottom: var(--space-lg);
+    }
+
+    .filter-group-label {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: var(--space-sm);
+      display: block;
+    }
+
+    .pill-selector {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-xs);
+    }
+
+    .pill-choice {
+      min-height: 44px;
+      padding: 0.5rem 1rem;
+      border-radius: var(--rounded-full);
+      border: var(--border-soft);
+      background-color: var(--surface-container-low);
+      color: var(--on-surface-body);
+      font-weight: 600;
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: background-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out);
+    }
+
+    .pill-choice:hover {
+      background-color: var(--primary-container);
+    }
+
+    .pill-choice.is-active {
+      background-color: var(--primary);
+      color: var(--on-primary);
+      border-color: var(--primary);
+    }
+
+    .guide-result-card {
+      background-color: var(--primary-container);
+      color: var(--on-primary-container);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-lg);
+      margin-bottom: var(--space-lg);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+      gap: var(--space-lg);
+      align-items: start;
+    }
+
+    .guide-metric-box {
+      background-color: var(--surface-card);
+      border-radius: var(--rounded);
+      padding: var(--space-md);
+      border: var(--border-soft);
+    }
+
+    .guide-dose-big {
+      font-family: var(--font-headline);
+      font-size: 1.875rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.15;
+      margin: var(--space-xs) 0;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: var(--border-soft);
+      border-radius: var(--rounded-lg);
+      background-color: var(--surface-card);
+    }
+
+    .dose-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9375rem;
+    }
+
+    .dose-table th {
+      background-color: var(--surface-container-low);
+      font-family: var(--font-label);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--primary);
+      padding: 0.875rem 1rem;
+      border-bottom: var(--border-soft);
+    }
+
+    .dose-table td {
+      padding: 0.875rem 1rem;
+      border-bottom: var(--border-soft);
+      vertical-align: top;
+    }
+
+    .dose-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    /* Interactive Fertilizer Calculator */
+    .calc-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: var(--space-xl);
+      align-items: start;
+    }
+
+    .calc-form-card {
+      background-color: var(--surface-card);
+      border: var(--border-soft);
+      border-radius: var(--rounded-xl);
+      padding: var(--space-xl);
+      box-shadow: var(--shadow-soft);
+      display: grid;
+      gap: var(--space-lg);
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .form-label {
+      font-weight: 700;
+      font-size: 0.9375rem;
+      color: var(--primary);
+    }
+
+    .form-hint {
+      font-size: 0.8125rem;
+      color: var(--on-surface-variant);
+    }
+
+    .form-select, .form-input {
+      min-height: 44px;
+      padding: 0.625rem 2.25rem 0.625rem 0.875rem;
+      border-radius: var(--rounded);
+      border: 1px solid var(--outline);
+      background-color: var(--background);
+      color: var(--on-surface);
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .form-input {
+      padding-right: 0.875rem;
+    }
+
+    .form-select:focus, .form-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: var(--focus-glow);
+    }
+
+    .dual-input-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 110px;
+      gap: var(--space-md);
+      align-items: center;
+    }
+
+    .range-slider {
+      width: 100%;
+      accent-color: var(--primary);
+      height: 8px;
+      cursor: pointer;
+    }
+
+    .calc-result-card {
+      background-color: var(--primary);
+      color: var(--on-primary);
+      border-radius: var(--rounded-xl);
+      padding: var(--space-xl);
+      box-shadow: var(--shadow-soft);
+      display: grid;
+      gap: var(--space-lg);
+    }
+
+    .calc-result-eyebrow {
+      font-family: var(--font-label);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary-bright);
+      margin: 0 0 var(--space-xs) 0;
+    }
+
+    .calc-total-figure {
+      font-family: var(--font-headline);
+      font-size: clamp(2rem, 1.5rem + 2vw, 2.75rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin: 0;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .calc-sub-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-md);
+    }
+
+    .calc-metric-tile {
+      background-color: var(--primary-mid);
+      border-radius: var(--rounded);
+      padding: var(--space-md);
+    }
+
+    .calc-metric-label {
+      font-family: var(--font-label);
+      font-size: 0.75rem;
+      color: var(--primary-container);
+      display: block;
+      margin-bottom: var(--space-xs);
+    }
+
+    .calc-metric-value {
+      font-family: var(--font-headline);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--on-primary);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .calc-advice-box {
+      background-color: var(--primary-container);
+      color: var(--on-primary-container);
+      border-radius: var(--rounded);
+      padding: var(--space-md);
+      font-size: 0.9375rem;
+    }
+
+    .calc-actions-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+    }
+
+    .btn-on-dark {
+      background-color: var(--primary-bright);
+      color: var(--primary);
+      border: 0;
+    }
+
+    .btn-on-dark:hover {
+      background-color: var(--primary-container);
+    }
+
+    .btn-ghost-dark {
+      background-color: transparent;
+      color: var(--on-primary);
+      border: 1px solid var(--primary-bright);
+    }
+
+    .btn-ghost-dark:hover {
+      background-color: var(--primary-mid);
+    }
+
+    .status-banner {
+      padding: var(--space-sm) var(--space-md);
+      border-radius: var(--rounded);
+      background-color: var(--primary-container);
+      color: var(--on-primary-container);
+      font-weight: 600;
+      font-size: 0.875rem;
+      display: none;
+    }
+
+    .status-banner.is-visible {
+      display: block;
+    }
+
+    /* Saved Plans Panel */
+    .saved-plans-panel {
+      margin-top: var(--space-xl);
+      background-color: var(--surface-card);
+      border: var(--border-soft);
+      border-radius: var(--rounded-xl);
+      padding: var(--space-lg);
+    }
+
+    .saved-plans-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-md);
+      margin-bottom: var(--space-md);
+    }
+
+    .saved-plans-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+      gap: var(--space-md);
+    }
+
+    .saved-plan-card {
+      background-color: var(--surface-container-low);
+      border: var(--border-soft);
+      border-radius: var(--rounded);
+      padding: var(--space-md);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: var(--space-sm);
+    }
+
+    .empty-state {
+      background-color: var(--surface-container-low);
+      border-radius: var(--rounded);
+      padding: var(--space-lg);
+      text-align: center;
+      color: var(--on-surface-variant);
+    }
+
+    /* Reviews Section */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-xs);
+      margin-bottom: var(--space-lg);
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+      gap: var(--space-lg);
+    }
+
+    .review-card {
+      background-color: var(--surface-card);
+      border: var(--border-soft);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: var(--space-md);
+      transition: transform var(--dur-short) var(--ease-out), box-shadow var(--dur-short) var(--ease-out);
+    }
+
+    .review-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .review-stars {
+      display: inline-flex;
+      gap: 2px;
+      color: var(--olive);
+    }
+
+    .review-quote {
+      margin: 0;
+      color: var(--on-surface-body);
+      font-size: 0.975rem;
+    }
+
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      padding-top: var(--space-sm);
+      border-top: var(--border-soft);
+    }
+
+    .author-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--rounded-full);
+      background-color: var(--primary-container);
+      color: var(--primary);
+      font-family: var(--font-headline);
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .author-name {
+      font-weight: 700;
+      color: var(--primary);
+      display: block;
+      font-size: 0.9375rem;
+    }
+
+    .author-meta {
+      font-size: 0.8125rem;
+      color: var(--on-surface-variant);
+      display: block;
+    }
+
+    /* FAQ Accordion */
+    .faq-list {
+      display: grid;
+      gap: var(--space-sm);
+      max-width: 880px;
+    }
+
+    .faq-item {
+      background-color: var(--surface-card);
+      border: var(--border-soft);
+      border-radius: var(--rounded-lg);
+      overflow: hidden;
+    }
+
+    .faq-trigger {
+      width: 100%;
+      min-height: 56px;
+      padding: var(--space-md) var(--space-lg);
+      background-color: transparent;
+      border: 0;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-md);
+      cursor: pointer;
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 1.0625rem;
+      color: var(--primary);
+    }
+
+    .faq-trigger:hover {
+      background-color: var(--surface-container-low);
+    }
+
+    .faq-icon {
+      flex-shrink: 0;
+      transition: transform var(--dur-short) var(--ease-out);
+    }
+
+    .faq-trigger[aria-expanded="true"] .faq-icon {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 var(--space-lg) var(--space-lg) var(--space-lg);
+      color: var(--on-surface-body);
+      border-top: var(--border-soft);
+      padding-top: var(--space-md);
+    }
+
+    .faq-item.is-open .faq-answer {
+      display: block;
+    }
+
+    /* Modal Popup */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background-color: var(--backdrop-scrim);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-md);
+      z-index: 100;
+    }
+
+    .modal-backdrop.is-open {
+      display: flex;
+    }
+
+    .modal-dialog {
+      background-color: var(--surface-card);
+      border-radius: var(--rounded-xl);
+      width: 100%;
+      max-width: 780px;
+      max-height: 88vh;
+      overflow-y: auto;
+      box-shadow: var(--shadow-modal);
+      border: var(--border-soft);
+      padding: var(--space-xl);
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: var(--space-md);
+      padding-bottom: var(--space-md);
+      border-bottom: var(--border-soft);
+      margin-bottom: var(--space-lg);
+    }
+
+    .modal-close-btn {
+      min-width: 44px;
+      min-height: 44px;
+      border-radius: var(--rounded-full);
+      border: var(--border-soft);
+      background-color: var(--surface-container-low);
+      color: var(--primary);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-close-btn:hover {
+      background-color: var(--primary-container);
+    }
+
+    /* Footer */
+    .site-footer {
+      background-color: var(--primary);
+      color: var(--on-primary);
+      padding-block: var(--space-2xl) var(--space-xl);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1fr);
+      gap: var(--space-xl);
+      padding-bottom: var(--space-xl);
+      border-bottom: 1px solid var(--primary-mid);
+      margin-bottom: var(--space-lg);
+    }
+
+    .footer-heading {
+      font-family: var(--font-headline);
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 0 0 var(--space-md) 0;
+      color: var(--primary-bright);
+    }
+
+    .footer-links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: var(--space-xs);
+    }
+
+    .footer-link {
+      text-decoration: none;
+      color: var(--primary-container);
+      font-size: 0.9375rem;
+      display: inline-flex;
+      min-height: 36px;
+      align-items: center;
+    }
+
+    .footer-link:hover {
+      color: var(--on-primary);
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: var(--space-md);
+      font-size: 0.875rem;
+      color: var(--primary-container);
+    }
+
+    /* Scroll Reveal */
+    .reveal-item {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity var(--dur-long) var(--ease-out), transform var(--dur-long) var(--ease-out);
+    }
+
+    @container (max-width: 480px) {
+      .mascot-spotlight-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid,
+      .mascot-layout,
+      .calc-grid,
+      .guide-result-card,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mascot-spotlight-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding-inline: var(--space-md);
+      }
+
+      .nav-bar {
+        padding-inline: var(--space-md);
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nutrient-duo,
+      .calc-sub-metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .cycle-steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .dual-input-row {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-showcase-card,
+      .explorer-shell,
+      .calc-form-card,
+      .calc-result-card,
+      .modal-dialog {
+        padding: var(--space-lg);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Brand Ribbon -->
+  <div class="top-ribbon">
+    <div class="top-ribbon-inner">
+      <span class="ribbon-tagline">
+        <span class="ribbon-dot" aria-hidden="true"></span>
+        NATURAL NUTRITION. SUSTAINABLE FUTURE.
+      </span>
+      <span class="ribbon-sub">Dari Limbah, untuk Kehidupan Hijau — BONEVIA Organic Bone Meal</span>
+    </div>
+  </div>
+
+  <!-- Static Header -->
+  <header>
+    <div class="nav-bar">
+      <a href="#beranda" class="brand-lockup" aria-label="BONEVIA Beranda">
+        <svg width="46" height="46" viewBox="0 0 64 64" role="img" aria-label="Logo BONEVIA huruf B unsur tulang dan daun">
+          <rect x="2" y="2" width="60" height="60" rx="16" fill="var(--primary-container)" stroke="var(--primary)" stroke-width="2"></rect>
+          <!-- Bone stem of letter B -->
+          <path d="M21 15 C17 15 15 18 17 21 C18 22.5 18.5 23.5 18.5 25 L18.5 39 C18.5 40.5 18 41.5 17 43 C15 46 17 49 21 49 C24 49 25.5 47 25.5 45 L25.5 19 C25.5 17 24 15 21 15 Z" fill="var(--bone-ivory)" stroke="var(--primary)" stroke-width="2.2"></path>
+          <!-- Upper leaf bowl of letter B (Olive) -->
+          <path d="M26 17 C37 15 47 19 46 26 C45 31 36 32 26 31 Z" fill="var(--olive)" stroke="var(--primary)" stroke-width="2"></path>
+          <!-- Lower leaf bowl of letter B (Deep Green) -->
+          <path d="M26 32 C39 31 49 36 48 43 C47 49 36 49 26 48 Z" fill="var(--primary-mid)" stroke="var(--primary)" stroke-width="2"></path>
+          <!-- Leaf veins -->
+          <path d="M28 24 C34 23 39 24 43 25" stroke="var(--primary-container)" stroke-width="1.8" stroke-linecap="round" fill="none"></path>
+          <path d="M28 40 C35 39 41 40 45 42" stroke="var(--primary-bright)" stroke-width="1.8" stroke-linecap="round" fill="none"></path>
+        </svg>
+        <span class="brand-text-group">
+          <span class="brand-name">BONEVIA</span>
+          <span class="brand-slogan">NATURAL NUTRITION. SUSTAINABLE FUTURE.</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Navigasi Utama">
+        <a href="#sahabat" class="nav-link">Sahabat BONEVIA</a>
+        <a href="#produk" class="nav-link">Produk &amp; Nutrisi</a>
+        <a href="#panduan" class="nav-link">Cara Pakai</a>
+        <a href="#kalkulator" class="nav-link">Kalkulator Dosis</a>
+        <a href="#ulasan" class="nav-link">Ulasan</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#kalkulator" class="btn btn-primary btn-sm">
+          <i data-lucide="calculator" width="16" height="16" aria-hidden="true"></i>
+          Hitung Dosis
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="beranda">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="hero-pill">
+              <i data-lucide="sprout" width="16" height="16" aria-hidden="true"></i>
+              BONEVIA Organic Bone Meal • Pupuk Tulang Ayam Organik
+            </div>
+            <h1 class="hero-title">
+              Dari Limbah, untuk <span class="hero-title-accent">Kehidupan Hijau</span>
+            </h1>
+            <p class="hero-desc">
+              Solusi pupuk organik tepung tulang ayam berformula tunggal yang kaya <strong>Fosfor (P₂O₅)</strong> dan <strong>Kalsium (CaO)</strong>. Dirancang untuk merangsang akar kokoh, memperbanyak bunga dan buah, serta menstabilkan tanah masam secara alami tanpa merusak ekosistem.
+            </p>
+            <div class="hero-highlights">
+              <span class="highlight-chip">
+                <i data-lucide="sparkles" width="16" height="16" aria-hidden="true"></i>
+                Tinggi Fosfor (P₂O₅)
+              </span>
+              <span class="highlight-chip">
+                <i data-lucide="shield-check" width="16" height="16" aria-hidden="true"></i>
+                Kaya Kalsium (CaO)
+              </span>
+              <span class="highlight-chip">
+                <i data-lucide="recycle" width="16" height="16" aria-hidden="true"></i>
+                100% Daur Ulang Organik
+              </span>
+              <span class="highlight-chip">
+                <i data-lucide="clock" width="16" height="16" aria-hidden="true"></i>
+                Slow-Release Aman Akar
+              </span>
+            </div>
+            <div class="hero-cta-group">
+              <a href="#kalkulator" class="btn btn-primary">
+                <i data-lucide="calculator" width="18" height="18" aria-hidden="true"></i>
+                Hitung Dosis Kebunmu
+              </a>
+              <button type="button" class="btn btn-secondary" onclick="openInfoModal('dosis')">
+                <i data-lucide="book-open" width="18" height="18" aria-hidden="true"></i>
+                Panduan Dosis Lengkap
+              </button>
+              <a href="#sahabat" class="btn btn-outline">
+                Kenali Sahabat BONEVIA
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-showcase-card">
+            <div class="showcase-top">
+              <div style="display:flex;align-items:center;gap:var(--space-sm);">
+                <svg width="56" height="56" viewBox="0 0 64 64" role="img" aria-label="Ikon Produk BONEVIA">
+                  <rect x="2" y="2" width="60" height="60" rx="16" fill="var(--surface-card)" stroke="var(--primary)" stroke-width="2"></rect>
+                  <path d="M21 15 C17 15 15 18 17 21 C18 22.5 18.5 23.5 18.5 25 L18.5 39 C18.5 40.5 18 41.5 17 43 C15 46 17 49 21 49 C24 49 25.5 47 25.5 45 L25.5 19 C25.5 17 24 15 21 15 Z" fill="var(--bone-ivory)" stroke="var(--primary)" stroke-width="2.2"></path>
+                  <path d="M26 17 C37 15 47 19 46 26 C45 31 36 32 26 31 Z" fill="var(--olive)" stroke="var(--primary)" stroke-width="2"></path>
+                  <path d="M26 32 C39 31 49 36 48 43 C47 49 36 49 26 48 Z" fill="var(--primary-mid)" stroke="var(--primary)" stroke-width="2"></path>
+                </svg>
+                <div>
+                  <strong style="display:block;font-family:var(--font-headline);font-size:1.125rem;color:var(--primary);">BONEVIA Organic Bone Meal</strong>
+                  <span style="font-size:0.875rem;color:var(--on-surface-variant);">1 Varian Utama • Serbaguna</span>
+                </div>
+              </div>
+              <span class="showcase-badge">SLOW-RELEASE</span>
+            </div>
+
+            <div class="nutrient-duo">
+              <div class="nutrient-mini-card">
+                <div class="nutrient-formula">UNSUR UTAMA P₂O₅</div>
+                <h2 class="nutrient-name">Fosfor Alami Tinggi</h2>
+                <p class="nutrient-role">Merangsang pertumbuhan akar serabut, tunas baru, serta memperbanyak bakal bunga dan buah.</p>
+              </div>
+              <div class="nutrient-mini-card">
+                <div class="nutrient-formula">UNSUR UTAMA CaO</div>
+                <h2 class="nutrient-name">Kalsium Penstabil</h2>
+                <p class="nutrient-role">Menjaga pH tanah asam tetap seimbang sekaligus memperkuat dinding sel dan jaringan tanaman.</p>
+              </div>
+            </div>
+
+            <div class="cycle-strip">
+              <div class="cycle-strip-head">
+                <span class="cycle-strip-label">Alur Sirkular BONEVIA</span>
+                <span class="cycle-strip-label">Zero-Waste</span>
+              </div>
+              <div class="cycle-steps">
+                <div class="cycle-step">1. Tulang Ayam</div>
+                <div class="cycle-step">2. Sterilisasi</div>
+                <div class="cycle-step is-active">3. Bone Meal</div>
+                <div class="cycle-step">4. Serap Akar</div>
+                <div class="cycle-step is-active">5. Panen Hijau</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Category Quick Strip -->
+        <div class="pillars-strip">
+          <div class="pillar-item">
+            <span class="icon-badge"><i data-lucide="carrot" width="20" height="20" aria-hidden="true"></i></span>
+            <div>
+              <h2 class="pillar-title">Tanaman Sayuran</h2>
+              <p class="pillar-text">Mendukung perakaran sehat untuk cabai, tomat, bayam, sawi, dan terong.</p>
+            </div>
+          </div>
+          <div class="pillar-item">
+            <span class="icon-badge is-olive"><i data-lucide="apple" width="20" height="20" aria-hidden="true"></i></span>
+            <div>
+              <h2 class="pillar-title">Tanaman Buah</h2>
+              <p class="pillar-text">Memperkuat bunga agar tidak mudah rontok dan mencegah busuk ujung buah.</p>
+            </div>
+          </div>
+          <div class="pillar-item">
+            <span class="icon-badge is-bright"><i data-lucide="flower-2" width="20" height="20" aria-hidden="true"></i></span>
+            <div>
+              <h2 class="pillar-title">Tanaman Hias</h2>
+              <p class="pillar-text">Aman untuk pot indoor maupun outdoor tanpa risiko akar terbakar.</p>
+            </div>
+          </div>
+          <div class="pillar-item">
+            <span class="icon-badge"><i data-lucide="layers" width="20" height="20" aria-hidden="true"></i></span>
+            <div>
+              <h2 class="pillar-title">Media Pot &amp; Lahan</h2>
+              <p class="pillar-text">Menyiapkan media tanam subur sejak awal tanam dengan pelepasan nutrisi bertahap.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 1: Meet Sahabat BONEVIA -->
+    <section id="sahabat" class="section-band alt">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">
+            <i data-lucide="users" width="16" height="16" aria-hidden="true"></i>
+            KARAKTER MASKOT EKOSISTEM
+          </p>
+          <h2 class="section-title">Meet Sahabat BONEVIA</h2>
+          <p class="section-lede">
+            Kenali lima karakter maskot BONEVIA yang membawa nilai inovasi, ketekunan petani, kepedulian lingkungan, dan persahabatan dalam setiap taburan nutrisi alami. Klik setiap karakter untuk melihat peran dan pesan kebunnya.
+          </p>
+        </div>
+
+        <div class="mascot-layout">
+          <div class="mascot-selector-grid" role="tablist" aria-label="Pilih Karakter Sahabat BONEVIA">
+            <button type="button" class="mascot-btn is-active" id="mascot-btn-semangat" onclick="selectMascot('semangat')" role="tab" aria-selected="true">
+              <span class="mascot-thumb" id="mascot-thumb-semangat" aria-hidden="true"></span>
+              <span>
+                <span class="mascot-btn-name">Si Semangat</span>
+                <span class="mascot-btn-role">Memberi energi untuk pertanian lebih hijau.</span>
+              </span>
+            </button>
+
+            <button type="button" class="mascot-btn" id="mascot-btn-peneliti" onclick="selectMascot('peneliti')" role="tab" aria-selected="false">
+              <span class="mascot-thumb" id="mascot-thumb-peneliti" aria-hidden="true"></span>
+              <span>
+                <span class="mascot-btn-name">Si Peneliti</span>
+                <span class="mascot-btn-role">Inovasi solusi pertanian berkelanjutan.</span>
+              </span>
+            </button>
+
+            <button type="button" class="mascot-btn" id="mascot-btn-petani" onclick="selectMascot('petani')" role="tab" aria-selected="false">
+              <span class="mascot-thumb" id="mascot-thumb-petani" aria-hidden="true"></span>
+              <span>
+                <span class="mascot-btn-name">Si Petani</span>
+                <span class="mascot-btn-role">Menumbuhkan harapan masa depan pertanian.</span>
+              </span>
+            </button>
+
+            <button type="button" class="mascot-btn" id="mascot-btn-pelindung" onclick="selectMascot('pelindung')" role="tab" aria-selected="false">
+              <span class="mascot-thumb" id="mascot-thumb-pelindung" aria-hidden="true"></span>
+              <span>
+                <span class="mascot-btn-name">Si Pelindung</span>
+                <span class="mascot-btn-role">Menjaga lingkungan &amp; mengurangi limbah organik.</span>
+              </span>
+            </button>
+
+            <button type="button" class="mascot-btn" id="mascot-btn-sahabat" onclick="selectMascot('sahabat')" role="tab" aria-selected="false">
+              <span class="mascot-thumb" id="mascot-thumb-sahabat" aria-hidden="true"></span>
+              <span>
+                <span class="mascot-btn-name">Si Sahabat</span>
+                <span class="mascot-btn-role">Bersama BONEVIA untuk pertanian lebih baik.</span>
+              </span>
+            </button>
+          </div>
+
+          <div class="mascot-spotlight" id="mascot-spotlight" aria-live="polite">
+            <div class="mascot-spotlight-inner">
+              <div class="mascot-stage" id="mascot-stage-svg"></div>
+              <div>
+                <span class="mascot-tag" id="mascot-tag">SAHABAT 1 OF 5 • ENERGI HIJAU</span>
+                <h3 class="mascot-detail-title" id="mascot-detail-title">Si Semangat</h3>
+                <p class="mascot-motto" id="mascot-detail-motto">“Memberi energi untuk pertanian lebih hijau.”</p>
+                <p class="mascot-story" id="mascot-detail-story"></p>
+                <div class="mascot-tip-box">
+                  <span class="mascot-tip-label">Catatan Praktik dari Karakter</span>
+                  <span id="mascot-detail-tip"></span>
+                </div>
+                <div class="mascot-nav-row">
+                  <span class="mascot-counter" id="mascot-counter">Karakter 1 dari 5</span>
+                  <div style="display:flex;gap:var(--space-xs);">
+                    <button type="button" class="btn btn-outline btn-sm" onclick="cycleMascot(-1)">
+                      <i data-lucide="chevron-left" width="16" height="16" aria-hidden="true"></i>
+                      Sebelumnya
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" onclick="cycleMascot(1)">
+                      Berikutnya
+                      <i data-lucide="chevron-right" width="16" height="16" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Produk Utama & Interactive Tabs / Modal -->
+    <section id="produk" class="section-band">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">
+            <i data-lucide="package-check" width="16" height="16" aria-hidden="true"></i>
+            1 VARIAN UTAMA • BONEVIA ORGANIC BONE MEAL
+          </p>
+          <h2 class="section-title">Nutrisi Fosfor &amp; Kalsium dalam Satu Formula Murni</h2>
+          <p class="section-lede">
+            BONEVIA menghadirkan satu varian unggulan yang terfokus: tepung tulang ayam organik hasil pengolahan higienis bersuhu terkendali, mempertahankan ketersediaan mineral alami untuk tanah dan tanaman.
+          </p>
+        </div>
+
+        <div class="product-core-grid">
+          <article class="card is-leaf-highlight is-interactive">
+            <div class="core-card-head">
+              <span class="icon-badge"><i data-lucide="sprout" width="22" height="22" aria-hidden="true"></i></span>
+              <span class="formula-pill">Fosfor (P₂O₅)</span>
+            </div>
+            <h3 class="card-title">Perangsang Akar, Tunas &amp; Pembungaan</h3>
+            <p style="margin:0;">
+              Fosfor berperan langsung dalam transfer energi seluler tanaman (ATP), mendorong pertumbuhan awal yang kokoh sejak fase bibit hingga fase generatif.
+            </p>
+            <ul class="bullet-list">
+              <li>Mempercepat pemanjangan akar serabut saat pindah tanam.</li>
+              <li>Merangsang pembentukan kuncup bunga lebih serempak.</li>
+              <li>Meningkatkan bobot, warna, dan daya tahan hasil panen.</li>
+            </ul>
+          </article>
+
+          <article class="card is-interactive">
+            <div class="core-card-head">
+              <span class="icon-badge is-olive"><i data-lucide="scale" width="22" height="22" aria-hidden="true"></i></span>
+              <span class="formula-pill">Kalsium (CaO)</span>
+            </div>
+            <h3 class="card-title">Penstabil pH Tanah &amp; Penguat Jaringan</h3>
+            <p style="margin:0;">
+              Kalsium alami membantu menyangga keasaman tanah yang sering menghambat serapan hara, sekaligus membangun struktur dinding sel tanaman yang kuat.
+            </p>
+            <ul class="bullet-list">
+              <li>Membantu menetralkan tanah masam secara perlahan dan aman.</li>
+              <li>Memperkokoh batang dan daun agar tidak mudah rebah.</li>
+              <li>Mengurangi risiko busuk ujung buah pada tomat dan cabai.</li>
+            </ul>
+          </article>
+        </div>
+
+        <!-- Interactive Explorer: Manfaat Nutrisi & Cara Penggunaan -->
+        <div id="panduan" class="explorer-shell">
+          <div class="explorer-toolbar">
+            <div class="tab-group" role="tablist" aria-label="Eksplorasi Manfaat dan Panduan Penggunaan">
+              <button type="button" class="tab-btn is-active" id="tab-btn-manfaat" onclick="switchProductTab('manfaat')" role="tab" aria-selected="true">
+                <i data-lucide="heart-pulse" width="18" height="18" aria-hidden="true"></i>
+                Manfaat Nutrisi
+              </button>
+              <button type="button" class="tab-btn" id="tab-btn-dosis" onclick="switchProductTab('dosis')" role="tab" aria-selected="false">
+                <i data-lucide="clipboard-list" width="18" height="18" aria-hidden="true"></i>
+                Cara Penggunaan &amp; Dosis
+              </button>
+            </div>
+
+            <div class="modal-triggers">
+              <button type="button" class="btn btn-outline btn-sm" onclick="openInfoModal('manfaat')">
+                <i data-lucide="maximize-2" width="16" height="16" aria-hidden="true"></i>
+                Popup Manfaat Nutrisi
+              </button>
+              <button type="button" class="btn btn-secondary btn-sm" onclick="openInfoModal('dosis')">
+                <i data-lucide="maximize-2" width="16" height="16" aria-hidden="true"></i>
+                Popup Panduan Dosis
+              </button>
+            </div>
+          </div>
+
+          <!-- Tab Panel 1: Manfaat Nutrisi -->
+          <div id="tab-panel-manfaat" class="tab-panel is-active">
+            <div class="benefits-grid">
+              <div class="benefit-card">
+                <span class="icon-badge" style="margin-bottom:var(--space-md);">
+                  <i data-lucide="network" width="20" height="20" aria-hidden="true"></i>
+                </span>
+                <h3 class="card-title">Untuk Perakaran</h3>
+                <p style="margin:0;color:var(--on-surface-variant);">
+                  Fosfor (P₂O₅) memicu percabangan akar halus yang memperluas area serapan air dan unsur hara, membuat bibit cepat pulih setelah dipindahkan ke pot atau lahan.
+                </p>
+              </div>
+
+              <div class="benefit-card">
+                <span class="icon-badge is-bright" style="margin-bottom:var(--space-md);">
+                  <i data-lucide="flower" width="20" height="20" aria-hidden="true"></i>
+                </span>
+                <h3 class="card-title">Untuk Bunga &amp; Buah</h3>
+                <p style="margin:0;color:var(--on-surface-variant);">
+                  Kombinasi P₂O₅ dan CaO menopang fase generatif: bakal bunga menempel lebih kuat, kerontokan berkurang, dan jaringan kulit buah lebih padat.
+                </p>
+              </div>
+
+              <div class="benefit-card">
+                <span class="icon-badge is-olive" style="margin-bottom:var(--space-md);">
+                  <i data-lucide="droplets" width="20" height="20" aria-hidden="true"></i>
+                </span>
+                <h3 class="card-title">Untuk Tanah Asam</h3>
+                <p style="margin:0;color:var(--on-surface-variant);">
+                  Kandungan Kalsium (CaO) bekerja sebagai penyeimbang pH alami pada tanah masam sehingga mikroba baik tetap aktif dan fosfor tidak terkunci di tanah.
+                </p>
+              </div>
+
+              <div class="benefit-card">
+                <span class="icon-badge" style="margin-bottom:var(--space-md);">
+                  <i data-lucide="earth" width="20" height="20" aria-hidden="true"></i>
+                </span>
+                <h3 class="card-title">Untuk Lingkungan</h3>
+                <p style="margin:0;color:var(--on-surface-variant);">
+                  Mengubah limbah tulang ayam menjadi pupuk bernilai tinggi, menekan timbulan sampah organik, serta mencegah pencucian nitrat/fosfat ke saluran air.
+                </p>
+              </div>
+            </div>
+
+            <!-- Slow-release visual illustration -->
+            <div class="release-viz-box">
+              <div class="release-viz-header">
+                <div>
+                  <h3 class="card-title" style="margin-bottom:var(--space-xs);">Ilustrasi Profil Pelepasan Nutrisi (Minggu ke-1 s.d. ke-8)</h3>
+                  <p style="margin:0;font-size:0.875rem;color:var(--on-surface-variant);">
+                    Perbandingan konseptual ketersediaan hara di zona akar antara pelepasan bertahap BONEVIA dan pupuk larut instan.
+                  </p>
+                </div>
+                <div class="legend-row">
+                  <span class="legend-item">
+                    <span class="legend-swatch is-bonevia" aria-hidden="true"></span>
+                    BONEVIA (Slow-Release Stabil)
+                  </span>
+                  <span class="legend-item">
+                    <span class="legend-swatch is-synthetic" aria-hidden="true"></span>
+                    Pupuk Larut Cepat (Lonjakan Singkat)
+                  </span>
+                </div>
+              </div>
+              <svg viewBox="0 0 720 190" width="100%" style="display:block;min-height:170px;" role="img" aria-label="Grafik ilustrasi perbandingan pelepasan nutrisi lambat BONEVIA selama 8 minggu">
+                <!-- Gridlines -->
+                <line x1="48" y1="30" x2="690" y2="30" stroke="var(--outline-variant)" stroke-dasharray="4 4"></line>
+                <line x1="48" y1="75" x2="690" y2="75" stroke="var(--outline-variant)" stroke-dasharray="4 4"></line>
+                <line x1="48" y1="120" x2="690" y2="120" stroke="var(--outline-variant)" stroke-dasharray="4 4"></line>
+                <line x1="48" y1="155" x2="690" y2="155" stroke="var(--outline)"></line>
+                <!-- Y axis labels -->
+                <text x="10" y="34" font-family="var(--font-label)" font-size="11" fill="var(--on-surface-variant)">Tinggi</text>
+                <text x="10" y="79" font-family="var(--font-label)" font-size="11" fill="var(--on-surface-variant)">Stabil</text>
+                <text x="10" y="124" font-family="var(--font-label)" font-size="11" fill="var(--on-surface-variant)">Rendah</text>
+                <!-- Synthetic fast spike line -->
+                <path d="M 60 150 C 95 35, 130 22, 165 42 C 215 80, 265 135, 360 146 C 470 151, 580 152, 675 153" fill="none" stroke="var(--data-context)" stroke-width="3" stroke-dasharray="6 5"></path>
+                <!-- BONEVIA smooth sustained release -->
+                <path d="M 60 145 C 125 95, 190 70, 280 65 C 380 60, 490 66, 675 84 L 675 155 L 60 155 Z" fill="var(--primary-container)" opacity="0.65"></path>
+                <path d="M 60 145 C 125 95, 190 70, 280 65 C 380 60, 490 66, 675 84" fill="none" stroke="var(--primary)" stroke-width="3.5" stroke-linecap="round"></path>
+                <!-- Callout dots -->
+                <circle cx="132" cy="27" r="4.5" fill="var(--data-context)"></circle>
+                <text x="144" y="26" font-family="var(--font-body)" font-size="11.5" font-weight="700" fill="var(--on-surface-variant)">Lonjakan awal, cepat tercuci</text>
+                <circle cx="340" cy="63" r="5.5" fill="var(--primary)"></circle>
+                <text x="352" y="53" font-family="var(--font-body)" font-size="12" font-weight="700" fill="var(--primary)">Suplai P₂O₅ &amp; CaO terjaga stabil</text>
+                <!-- X labels -->
+                <text x="58" y="175" font-family="var(--font-label)" font-size="11" fill="var(--on-surface-variant)">Mg 1</text>
+                <text x="145" y="175" font-family="var(--font-label)" font-size="11" fill="var(--on-surface-variant)">Mg 2</text>
+                <text x="235" y="175" font-family="var(--font-label)" font-size="11" fill="var(--on-surface-variant)">Mg 3</text>
+                <text x="325" y="175" font-family="var(--font-label)" font-size="11" fill="var(--on-surface-variant)">Mg 4</text>
+                <text x="415" y="175" font-family="var(--font-label)" font-size="11" fill="var(--on-surface-variant)">Mg 5</text>
+                <text x="505" y="175" font-family="var(--font-label)" font-size="11" fill="var(--on-surface-variant)">Mg 6</text>
+                <text x="595" y="175" font-family="var(--font-label)" font-size="11" fill="var(--on-surface-variant)">Mg 7</text>
+                <text x="665" y="175" font-family="var(--font-label)" font-size="11" fill="var(--on-surface-variant)">Mg 8</text>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Tab Panel 2: Cara Penggunaan & Dosis -->
+          <div id="tab-panel-dosis" class="tab-panel">
+            <div class="guide-filters">
+              <div>
+                <span class="filter-group-label">1. Pilih Jenis Tanaman</span>
+                <div class="pill-selector" role="group" aria-label="Pilih Jenis Tanaman">
+                  <button type="button" class="pill-choice is-active" id="guide-crop-sayuran" onclick="selectGuideCrop('sayuran')">Sayuran</button>
+                  <button type="button" class="pill-choice" id="guide-crop-buah" onclick="selectGuideCrop('buah')">Buah</button>
+                  <button type="button" class="pill-choice" id="guide-crop-hias" onclick="selectGuideCrop('hias')">Tanaman Hias</button>
+                  <button type="button" class="pill-choice" id="guide-crop-media" onclick="selectGuideCrop('media')">Pot / Lahan</button>
+                </div>
+              </div>
+              <div>
+                <span class="filter-group-label">2. Pilih Metode Aplikasi</span>
+                <div class="pill-selector" role="group" aria-label="Pilih Metode Aplikasi">
+                  <button type="button" class="pill-choice is-active" id="guide-method-tabur" onclick="selectGuideMethod('tabur')">Tabur</button>
+                  <button type="button" class="pill-choice" id="guide-method-kocor" onclick="selectGuideMethod('kocor')">Kocor</button>
+                  <button type="button" class="pill-choice" id="guide-method-campur" onclick="selectGuideMethod('campur')">Campur Media</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="guide-result-card" aria-live="polite">
+              <div>
+                <div class="guide-metric-box" style="margin-bottom:var(--space-md);">
+                  <span class="section-eyebrow" style="margin-bottom:var(--space-xs);">TAKARAN ANJURAN</span>
+                  <div class="guide-dose-big" id="guide-dose-value">15–20 g / tanaman</div>
+                  <div id="guide-dose-spoon" style="font-size:0.9375rem;font-weight:700;color:var(--primary-mid);">± 1,5–2 sendok makan</div>
+                </div>
+                <div class="guide-metric-box">
+                  <span class="section-eyebrow" style="margin-bottom:var(--space-xs);">INTERVAL PEMUPUKAN</span>
+                  <div id="guide-interval" style="font-weight:700;color:var(--primary);font-size:1.0625rem;">Setiap 2 minggu sekali</div>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="card-title" id="guide-combo-title" style="margin-bottom:var(--space-sm);">Sayuran — Metode Tabur</h3>
+                <p id="guide-steps" style="margin:0 0 var(--space-md) 0;"></p>
+                <div style="background-color:var(--surface-card);padding:var(--space-md);border-radius:var(--rounded);border:var(--border-soft);">
+                  <strong style="display:block;color:var(--primary);margin-bottom:var(--space-xs);">Tips Lapangan:</strong>
+                  <span id="guide-tip" style="color:var(--on-surface-variant);font-size:0.9375rem;"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="table-wrap">
+              <table class="dose-table">
+                <thead>
+                  <tr>
+                    <th>Kategori Tanaman</th>
+                    <th>Metode Tabur</th>
+                    <th>Metode Kocor</th>
+                    <th>Campur Media</th>
+                    <th>Frekuensi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Sayuran</strong> (Cabai, Tomat, Sawi, Bayam)</td>
+                    <td>15–20 g / tanaman</td>
+                    <td>20 g per 2 L air</td>
+                    <td>25 g per polibag / pot</td>
+                    <td>Tiap 14 hari</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Tanaman Buah</strong> (Jeruk, Mangga, Jambu)</td>
+                    <td>50–100 g / pohon</td>
+                    <td>60 g per 5 L air</td>
+                    <td>100–150 g / lubang tanam</td>
+                    <td>Tiap 30 hari</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Tanaman Hias</strong> (Monstera, Mawar, Anggrek tanah)</td>
+                    <td>10–15 g / pot</td>
+                    <td>10 g per 1,5 L air</td>
+                    <td>15–20 g per 5 L media</td>
+                    <td>Tiap 21–30 hari</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Olah Pot / Lahan</strong> (Persiapan Media)</td>
+                    <td>100–150 g / m² bedengan</td>
+                    <td>30 g / 3 L siram lahan</td>
+                    <td>20–30 g / pot diameter 25 cm</td>
+                    <td>Awal tanam &amp; susulan</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Kalkulator Dosis Pupuk Interaktif -->
+    <section id="kalkulator" class="section-band alt">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">
+            <i data-lucide="calculator" width="16" height="16" aria-hidden="true"></i>
+            ALAT HITUNG TAKARAN OTOMATIS
+          </p>
+          <h2 class="section-title">Kalkulator Dosis Pupuk BONEVIA</h2>
+          <p class="section-lede">
+            Hitung kebutuhan pupuk berdasarkan jenis tanaman, metode aplikasi, fase pertumbuhan, dan jumlah tanamanmu. Simpan hasilnya ke Catatan Kebun agar tidak lupa jadwal pemupukan.
+          </p>
+        </div>
+
+        <div class="calc-grid">
+          <div class="calc-form-card">
+            <div class="form-field">
+              <label for="calc-crop" class="form-label">Jenis Tanaman / Media</label>
+              <select id="calc-crop" class="form-select" onchange="updateCalculator()">
+                <option value="sayuran">Sayuran (Cabai, Tomat, Terong, Sawi)</option>
+                <option value="buah">Tanaman Buah (Tabulampot / Pohon Produktif)</option>
+                <option value="hias">Tanaman Hias (Daun &amp; Bunga Pot)</option>
+                <option value="media">Persiapan Media Tanam (Pot / Bedengan)</option>
+              </select>
+              <span class="form-hint">Menentukan takaran dasar Fosfor &amp; Kalsium per unit.</span>
+            </div>
+
+            <div class="form-field">
+              <label for="calc-method" class="form-label">Metode Aplikasi</label>
+              <select id="calc-method" class="form-select" onchange="updateCalculator()">
+                <option value="tabur">Tabur Melingkar di Pangkal Batang</option>
+                <option value="kocor">Kocor (Dilarutkan / Direndam dalam Air)</option>
+                <option value="campur">Campur Media Tanam (Sebelum Tanam)</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="calc-stage" class="form-label">Fase Pertumbuhan Tanaman</label>
+              <select id="calc-stage" class="form-select" onchange="updateCalculator()">
+                <option value="awal">Awal Tanam / Pemulihan Akar (1.0x)</option>
+                <option value="berbunga">Pembungaan &amp; Pembuahan (1.25x)</option>
+                <option value="rutin">Pemeliharaan Rutin (0.85x)</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="calc-plants-number" class="form-label">Jumlah Tanaman / Pot / Titik Tanam</label>
+              <div class="dual-input-row">
+                <input type="range" id="calc-plants-slider" class="range-slider" min="1" max="200" value="15" oninput="syncPlantsFromSlider(this.value)" aria-label="Slider jumlah tanaman">
+                <input type="number" id="calc-plants-number" class="form-input" min="1" max="500" value="15" oninput="syncPlantsFromNumber(this.value)">
+              </div>
+              <span class="form-hint">Geser untuk 1–200 tanaman, atau ketik langsung hingga 500 titik tanam.</span>
+            </div>
+
+            <div class="form-field">
+              <label for="calc-cycles" class="form-label">Periode Perencanaan Aplikasi</label>
+              <select id="calc-cycles" class="form-select" onchange="updateCalculator()">
+                <option value="1">1 Kali Aplikasi (Kebutuhan Sekali Pakai)</option>
+                <option value="2">1 Bulan (2 Kali Aplikasi)</option>
+                <option value="6">1 Musim / 3 Bulan (6 Kali Aplikasi)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="calc-result-card" aria-live="polite">
+            <div>
+              <p class="calc-result-eyebrow">ESTIMASI TOTAL KEBUTUHAN BONEVIA</p>
+              <p class="calc-total-figure" id="calc-total-output">225 gram</p>
+              <p id="calc-total-kg" style="margin:var(--space-xs) 0 0 0;color:var(--primary-container);font-weight:600;">Setara 0,23 kg untuk 15 tanaman (1x aplikasi)</p>
+            </div>
+
+            <div class="calc-sub-metrics">
+              <div class="calc-metric-tile">
+                <span class="calc-metric-label">Dosis per Tanaman</span>
+                <span class="calc-metric-value" id="calc-per-plant">15 g</span>
+              </div>
+              <div class="calc-metric-tile">
+                <span class="calc-metric-label">Takaran Sendok</span>
+                <span class="calc-metric-value" id="calc-spoon-est">± 1,5 sdm</span>
+              </div>
+              <div class="calc-metric-tile">
+                <span class="calc-metric-label" id="calc-aux-label">Jarak Tabur Ideal</span>
+                <span class="calc-metric-value" id="calc-aux-value">5–10 cm</span>
+              </div>
+              <div class="calc-metric-tile">
+                <span class="calc-metric-label">Saran Kemasan</span>
+                <span class="calc-metric-value" id="calc-pack-rec">1 Pack (500 g)</span>
+              </div>
+            </div>
+
+            <div class="calc-advice-box" id="calc-advice-text">
+              Taburkan 15 g BONEVIA melingkar berjarak 5–10 cm dari batang, tutup tipis dengan tanah atau kompos, lalu siram air secukupnya agar mikroba mulai mengurai Fosfor dan Kalsium.
+            </div>
+
+            <div class="calc-actions-row">
+              <button type="button" class="btn btn-on-dark" onclick="saveCurrentPlan()">
+                <i data-lucide="bookmark-plus" width="18" height="18" aria-hidden="true"></i>
+                Simpan ke Catatan Kebun
+              </button>
+              <button type="button" class="btn btn-ghost-dark" onclick="downloadPlanSummary()">
+                <i data-lucide="download" width="18" height="18" aria-hidden="true"></i>
+                Unduh Ringkasan (.txt)
+              </button>
+            </div>
+
+            <div id="calc-status-banner" class="status-banner" role="status"></div>
+          </div>
+        </div>
+
+        <!-- Saved Plans Panel (Persisted via notebookAppApi) -->
+        <div class="saved-plans-panel">
+          <div class="saved-plans-header">
+            <div>
+              <h3 class="card-title" style="margin:0;">Catatan Rencana Pemupukan Tersimpan</h3>
+              <p style="margin:0;font-size:0.875rem;color:var(--on-surface-variant);">Tersimpan otomatis pada ruang kerja ini untuk perbandingan antar petak kebun.</p>
+            </div>
+            <button type="button" id="clear-plans-btn" class="btn btn-danger-outline btn-sm" onclick="clearAllPlans(this)">
+              <i data-lucide="trash-2" width="16" height="16" aria-hidden="true"></i>
+              Hapus Semua
+            </button>
+          </div>
+          <div id="saved-plans-container">
+            <div class="empty-state">
+              Belum ada rencana pemupukan tersimpan. Atur jenis tanaman dan jumlahnya di kalkulator, lalu tekan <strong>Simpan ke Catatan Kebun</strong>.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Ulasan Petani & Pengguna -->
+    <section id="ulasan" class="section-band">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">
+            <i data-lucide="message-square-quote" width="16" height="16" aria-hidden="true"></i>
+            CERITA PENGGUNA BONEVIA
+          </p>
+          <h2 class="section-title">Pengalaman Petani &amp; Pegiat Kebun</h2>
+          <p class="section-lede">
+            Lihat bagaimana BONEVIA membantu petani sayur, kebun buah, dan penghobi tanaman hias mendapatkan akar lebih kuat dan hasil lebih sehat.
+          </p>
+        </div>
+
+        <div class="filter-bar" role="group" aria-label="Filter Ulasan Pengguna">
+          <button type="button" class="pill-choice is-active" id="rev-filter-semua" onclick="filterReviews('semua')">Semua Ulasan</button>
+          <button type="button" class="pill-choice" id="rev-filter-sayuran" onclick="filterReviews('sayuran')">Petani Sayur</button>
+          <button type="button" class="pill-choice" id="rev-filter-buah" onclick="filterReviews('buah')">Kebun Buah</button>
+          <button type="button" class="pill-choice" id="rev-filter-hias" onclick="filterReviews('hias')">Tanaman Hias</button>
+        </div>
+
+        <div class="reviews-grid" id="reviews-grid"></div>
+      </div>
+    </section>
+
+    <!-- Section 5: FAQ Edukasi -->
+    <section id="faq" class="section-band alt">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">
+            <i data-lucide="help-circle" width="16" height="16" aria-hidden="true"></i>
+            EDUKASI &amp; TANYA JAWAB
+          </p>
+          <h2 class="section-title">Pertanyaan yang Sering Diajukan</h2>
+          <p class="section-lede">
+            Penjelasan ringkas seputar kandungan nutrisi tulang ayam organik, keamanan untuk tanaman pot, dan cara aplikasinya di tanah asam.
+          </p>
+        </div>
+
+        <div class="faq-list" id="faq-list">
+          <div class="faq-item is-open">
+            <button type="button" class="faq-trigger" aria-expanded="true" onclick="toggleFaq(this)">
+              <span>Apa keunggulan BONEVIA dibanding pupuk NPK kimia biasa?</span>
+              <i data-lucide="chevron-down" width="20" height="20" class="faq-icon" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer">
+              BONEVIA bekerja dengan sistem pelepasan lambat (<em>slow-release</em>) alami. Fosfor (P₂O₅) dan Kalsium (CaO) dilepaskan secara bertahap seiring aktivitas mikroba tanah, sehingga tidak menyebabkan akar terbakar (<em>root burn</em>), tidak membuat tanah cepat mengeras, dan mendukung kesuburan jangka panjang.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+              <span>Apakah pupuk tulang ayam BONEVIA berbau menyengat atau mengundang hama?</span>
+              <i data-lucide="chevron-down" width="20" height="20" class="faq-icon" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer">
+              Tulang ayam diproses melalui pencucian, pengukusan/sterilisasi bersuhu terkendali, dan pengeringan hingga kadar lemak serta air sangat rendah sebelum digiling. Hasilnya beraroma ringan khas bahan organik kering. Untuk penggunaan di pot luar ruangan, cukup tutup tipis taburan pupuk dengan lapisan tanah atau kompos.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+              <span>Mengapa Kalsium (CaO) pada BONEVIA penting untuk tanah masam?</span>
+              <i data-lucide="chevron-down" width="20" height="20" class="faq-icon" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer">
+              Pada tanah yang pH-nya terlalu asam (di bawah 5,5), unsur Fosfor mudah terikat oleh besi atau aluminium sehingga sulit diserap akar. Kalsium alami (CaO) di dalam tepung tulang bertindak sebagai penyangga pH tanah sekaligus memperkuat dinding sel tanaman agar tahan terhadap pembusukan ujung buah.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+              <span>Kapan waktu terbaik mengaplikasikan BONEVIA?</span>
+              <i data-lucide="chevron-down" width="20" height="20" class="faq-icon" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer">
+              Waktu paling efektif adalah saat persiapan media tanam atau pindah tanam bibit agar akar langsung bertemu sumber Fosfor, serta menjelang fase pembungaan (generatif). Pemupukan susulan umumnya dilakukan setiap 2–4 minggu tergantung jenis tanamannya.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+              <span>Bolehkah BONEVIA dicampur dengan kompos atau pupuk kandang?</span>
+              <i data-lucide="chevron-down" width="20" height="20" class="faq-icon" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer">
+              Sangat dianjurkan. Kompos dan pupuk kandang matang kaya akan bahan organik dan mikroorganisme pengurai. Kehadiran mikroba tanah tersebut justru mempercepat pelarutan mineral P₂O₅ dan CaO dari tepung tulang agar lebih cepat tersedia bagi akar.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+              <span>Bagaimana cara menyimpan sisa pupuk BONEVIA agar tahan lama?</span>
+              <i data-lucide="chevron-down" width="20" height="20" class="faq-icon" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer">
+              Simpan di wadah tertutup rapat pada tempat yang kering, teduh, dan tidak terkena hujan atau sinar matahari langsung. Dalam kondisi kering, kandungan mineral Fosfor dan Kalsium tetap stabil hingga berbulan-bulan.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div style="display:flex;align-items:center;gap:var(--space-sm);margin-bottom:var(--space-md);">
+            <svg width="42" height="42" viewBox="0 0 64 64" aria-hidden="true">
+              <rect x="2" y="2" width="60" height="60" rx="16" fill="var(--primary-container)"></rect>
+              <path d="M21 15 C17 15 15 18 17 21 C18 22.5 18.5 23.5 18.5 25 L18.5 39 C18.5 40.5 18 41.5 17 43 C15 46 17 49 21 49 C24 49 25.5 47 25.5 45 L25.5 19 C25.5 17 24 15 21 15 Z" fill="var(--bone-ivory)" stroke="var(--primary)" stroke-width="2.2"></path>
+              <path d="M26 17 C37 15 47 19 46 26 C45 31 36 32 26 31 Z" fill="var(--olive)" stroke="var(--primary)" stroke-width="2"></path>
+              <path d="M26 32 C39 31 49 36 48 43 C47 49 36 49 26 48 Z" fill="var(--primary-mid)" stroke="var(--primary)" stroke-width="2"></path>
+            </svg>
+            <div>
+              <strong style="font-family:var(--font-headline);font-size:1.25rem;display:block;">BONEVIA</strong>
+              <span style="font-family:var(--font-label);font-size:0.7rem;color:var(--primary-bright);">NATURAL NUTRITION. SUSTAINABLE FUTURE.</span>
+            </div>
+          </div>
+          <p style="margin:0;color:var(--primary-container);max-width:44ch;">
+            Dari Limbah, untuk Kehidupan Hijau. Inovasi pupuk tepung tulang ayam organik kaya Fosfor (P₂O₅) dan Kalsium (CaO) untuk pertanian Nusantara yang lebih lestari.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Jelajahi Bagian</h3>
+          <ul class="footer-links">
+            <li><a href="#sahabat" class="footer-link">Meet Sahabat BONEVIA</a></li>
+            <li><a href="#produk" class="footer-link">Kandungan P₂O₅ &amp; CaO</a></li>
+            <li><a href="#panduan" class="footer-link">Manfaat &amp; Cara Penggunaan</a></li>
+            <li><a href="#kalkulator" class="footer-link">Kalkulator Dosis Pupuk</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Edukasi &amp; Bantuan</h3>
+          <ul class="footer-links">
+            <li><a href="#ulasan" class="footer-link">Ulasan Petani &amp; Pengguna</a></li>
+            <li><a href="#faq" class="footer-link">FAQ Edukasi Pupuk Organik</a></li>
+            <li><button type="button" class="footer-link" style="background:none;border:0;padding:0;cursor:pointer;" onclick="openInfoModal('manfaat')">Detail Manfaat Nutrisi</button></li>
+            <li><button type="button" class="footer-link" style="background:none;border:0;padding:0;cursor:pointer;" onclick="openInfoModal('dosis')">Tabel Dosis Lengkap</button></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>BONEVIA Organic Bone Meal — Pertanian Berkelanjutan Berbasis Ekonomi Sirkular</span>
+        <span>Natural Nutrition • Sustainable Future</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Popup Modal (Manfaat Nutrisi / Cara Penggunaan & Dosis) -->
+  <div id="info-modal-backdrop" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title" onclick="handleBackdropClick(event)">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div>
+          <span class="section-eyebrow" id="modal-eyebrow">DETAIL PRODUK BONEVIA</span>
+          <h2 class="section-title" id="modal-title" style="margin:0;font-size:1.5rem;">Detail Manfaat Nutrisi</h2>
+        </div>
+        <button type="button" class="modal-close-btn" id="modal-close-btn" onclick="closeInfoModal()" aria-label="Tutup jendela modal">
+          <i data-lucide="x" width="20" height="20" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div id="modal-body-content"></div>
+    </div>
+  </div>
+
+  <api-shim></api-shim>
+
+  <script>
+    const MASCOT_ORDER = [`semangat`, `peneliti`, `petani`, `pelindung`, `sahabat`];
+
+    const MASCOT_DATA = {
+      semangat: {
+        tag: `SAHABAT 1 OF 5 • ENERGI HIJAU`,
+        name: `Si Semangat`,
+        motto: `“Memberi energi untuk pertanian lebih hijau.”`,
+        story: `Si Semangat melambangkan daya dorong awal yang dibutuhkan setiap bibit saat menyentuh tanah. Dengan pasokan Fosfor (P₂O₅) alami, energi sel tanaman aktif sejak hari pertama tanam sehingga tunas dan akar baru tumbuh penuh vitalitas.`,
+        tip: `Gunakan BONEVIA pada fase awal tanam agar bibit tidak mengalami stres pindah tanam dan segera membentuk jaringan akar serabut baru.`,
+        accent: `var(--primary-bright)`
+      },
+      peneliti: {
+        tag: `SAHABAT 2 OF 5 • INOVASI NUTRISI`,
+        name: `Si Peneliti`,
+        motto: `“Inovasi solusi pertanian berkelanjutan.”`,
+        story: `Si Peneliti mengawal proses pengolahan limbah tulang ayam menjadi tepung mineral organik yang higienis, halus, dan mudah dicerna oleh mikroorganisme tanah. Fokusnya memastikan keseimbangan Fosfor dan Kalsium tersedia secara bertahap.`,
+        tip: `Untuk penyerapan lebih merata di tanah padat, padukan aplikasi BONEVIA dengan bahan organik matang atau kompos agar mikroba pengurai bekerja optimal.`,
+        accent: `var(--olive)`
+      },
+      petani: {
+        tag: `SAHABAT 3 OF 5 • HARAPAN PANEN`,
+        name: `Si Petani`,
+        motto: `“Menumbuhkan harapan masa depan pertanian.”`,
+        story: `Si Petani hadir mendampingi pelaku budidaya sayur, buah, hingga pekebun rumahan. Baginya, tanah yang sehat adalah investasi terbaik agar setiap musim tanam menghasilkan panen melimpah tanpa ketergantungan bahan kimia berlebih.`,
+        tip: `Pada tanaman cabai, tomat, dan buah pot, aplikasikan dosis penguat menjelang munculnya kuncup bunga agar bunga tidak mudah rontok.`,
+        accent: `var(--primary-mid)`
+      },
+      pelindung: {
+        tag: `SAHABAT 4 OF 5 • PENJAGA EKOSISTEM`,
+        name: `Si Pelindung`,
+        motto: `“Menjaga lingkungan & mengurangi limbah organik.”`,
+        story: `Si Pelindung mengubah potensi limbah tulang ayam menjadi sumber daya ekonomi sirkular bernilai tinggi. Selain menekan timbulan sampah organik, sifat slow-release BONEVIA menjaga perairan dan struktur tanah tetap bersih.`,
+        tip: `Aplikasi terukur membantu menyangga pH tanah masam sekaligus mencegah pencucian unsur hara berlebih saat musim hujan tiba.`,
+        accent: `var(--primary)`
+      },
+      sahabat: {
+        tag: `SAHABAT 5 OF 5 • TUMBUH BERSAMA`,
+        name: `Si Sahabat`,
+        motto: `“Bersama BONEVIA untuk pertanian lebih baik.”`,
+        story: `Si Sahabat menjembatani pemula kebun rumah hingga petani berpengalaman. Praktis digunakan di pot teras, pekarangan, maupun bedengan luas dengan panduan takaran yang sederhana dan ramah bagi tanaman kesayangan.`,
+        tip: `Mulai dari pot hias di rumah dengan takaran 1 sendok makan (±10 g) setiap 3–4 minggu, siram teratur, dan amati daun serta bunga tumbuh lebih segar.`,
+        accent: `var(--olive-light)`
+      }
+    };
+
+    const GUIDE_CROPS = {
+      sayuran: {
+        label: `Sayuran`,
+        tabur: {
+          dose: `15–20 g / tanaman`,
+          spoon: `± 1,5–2 sendok makan`,
+          interval: `Setiap 2 minggu sekali`,
+          steps: `Taburkan pupuk melingkar berjarak 5–8 cm dari batang utama sayuran (cabai, tomat, terong, sawi). Tutup tipis dengan tanah gembur lalu siram merata.`,
+          tip: `Pada cabai dan tomat, berikan mulai usia 14 hari setelah tanam untuk mencegah kerontokan bunga pertama.`
+        },
+        kocor: {
+          dose: `20 g / 2 liter air`,
+          spoon: `± 2 sendok makan untuk 4–5 tanaman`,
+          interval: `Setiap 10–14 hari sekali`,
+          steps: `Aduk rata 20 g BONEVIA dalam 2 liter air bersih (boleh didiamkan 2–6 jam agar ekstrak mineral larut maksimal), lalu siramkan ±400 ml ke area perakaran tiap tanaman.`,
+          tip: `Aduk larutan setiap kali menuang agar butiran halus mineral terbagi merata ke setiap lubang tanam.`
+        },
+        campur: {
+          dose: `25 g / polibag atau pot`,
+          spoon: `± 2,5 sendok makan per 5 L media`,
+          interval: `1 kali saat olah media + susulan hari ke-21`,
+          steps: `Campurkan secara merata bersama tanah, sekam bakar, dan kompos sebelum bibit sayuran ditanam. Siram media hingga lembap dan diamkan 2 hari sebelum tanam.`,
+          tip: `Persiapan media di awal membuat akar muda langsung menyerap Fosfor dan Kalsium sejak hari pertama.`
+        }
+      },
+      buah: {
+        label: `Tanaman Buah`,
+        tabur: {
+          dose: `50–100 g / pohon`,
+          spoon: `± 5–10 sendok makan`,
+          interval: `Setiap 30 hari sekali`,
+          steps: `Buat alur melingkar mengikuti proyeksi tajuk terluar pohon (atau tepi pot untuk tabulampot), taburkan BONEVIA merata, lalu timbun kembali dengan tanah.`,
+          tip: `Sesuaikan dosis dengan umur tanaman: 50 g untuk bibit/tabulampot, hingga 100 g untuk pohon dewasa produktif.`
+        },
+        kocor: {
+          dose: `60 g / 5 liter air`,
+          spoon: `± 6 sendok makan per pohon`,
+          interval: `Setiap 2–3 minggu menjelang berbunga`,
+          steps: `Larutkan 60 g BONEVIA ke dalam 5 liter air, aduk merata, lalu siramkan perlahan di sekeliling zona perakaran luar batang.`,
+          tip: `Sangat membantu mempercepat respons pada tabulampot jambu, jeruk, atau mangga saat fase induksi bunga.`
+        },
+        campur: {
+          dose: `100–150 g / lubang tanam`,
+          spoon: `± 10–15 sendok makan`,
+          interval: `1 kali pada penanaman awal`,
+          steps: `Aduk rata bersama tanah galian dan pupuk kandang matang di dasar lubang tanam berukuran 40×40 cm sebelum bibit buah ditanam.`,
+          tip: `Kalsium membantu menjaga struktur media tanam jangka panjang agar tidak mudah menjadi masam.`
+        }
+      },
+      hias: {
+        label: `Tanaman Hias`,
+        tabur: {
+          dose: `10–15 g / pot`,
+          spoon: `± 1–1,5 sendok makan`,
+          interval: `Setiap 21–30 hari sekali`,
+          steps: `Taburkan di pinggiran media pot menjauhi pangkal batang, benamkan ringan sekitar 1–2 cm dengan garpu kebun kecil, lalu siram secukupnya.`,
+          tip: `Untuk tanaman hias indoor seperti Monstera atau Anthurium, membenamkan pupuk ke lapisan atas media menjaga pot tetap rapi dan bebas aroma.`
+        },
+        kocor: {
+          dose: `10 g / 1,5 liter air`,
+          spoon: `± 1 sendok makan untuk 3–4 pot`,
+          interval: `Setiap 2 minggu sekali`,
+          steps: `Campurkan 10 g BONEVIA dalam 1,5 liter air, aduk atau diamkan sebentar, lalu siramkan secukupnya ke media pot tanpa membasahi daun secara berlebihan.`,
+          tip: `Cocok untuk tanaman berbunga seperti mawar, adenium, dan bougenville agar tangkai bunga kokoh.`
+        },
+        campur: {
+          dose: `15–20 g / 5 liter media`,
+          spoon: `± 1,5–2 sendok makan per pot sedang`,
+          interval: `Saat repotting / ganti media`,
+          steps: `Aduk rata ke dalam campuran media porous (sekam, cocopeat, kompos) saat melakukan repotting tanaman hias.`,
+          tip: `Sifat slow-release memastikan akar tanaman hias yang sensitif tidak mengalami gosong akibat kelebihan garam mineral.`
+        }
+      },
+      media: {
+        label: `Pot / Lahan`,
+        tabur: {
+          dose: `100–150 g / m² lahan`,
+          spoon: `± 10–15 sendok makan per meter persegi`,
+          interval: `Saat pengolahan lahan awal`,
+          steps: `Sebar merata di atas permukaan bedengan yang sudah digemburkan, lalu cacah ringan atau aduk setebal 10–15 cm lapisan atas tanah.`,
+          tip: `Kombinasikan dengan penyiraman air bersih agar proses stabilisasi pH oleh Kalsium mulai bekerja sebelum tanam.`
+        },
+        kocor: {
+          dose: `30 g / 3 liter air`,
+          spoon: `± 3 sendok makan per meter persegi`,
+          interval: `Setiap 2–3 minggu untuk penyegaran media`,
+          steps: `Larutkan 30 g BONEVIA ke dalam 3 liter air, lalu siramkan merata menggunakan gembor pada permukaan bedengan atau deretan pot.`,
+          tip: `Ideal untuk menyegarkan kembali media pot bekas tanam agar siap dipakai pada siklus berikutnya.`
+        },
+        campur: {
+          dose: `20–30 g / pot (Ø 25 cm)`,
+          spoon: `± 2–3 sendok makan per pot`,
+          interval: `Setiap pembuatan media tanam baru`,
+          steps: `Campurkan langsung ke adonan tanah + kompos + sekam hingga homogen sebelum dimasukkan ke dalam pot atau planter bag.`,
+          tip: `Menghasilkan cadangan hara Fosfor dan Kalsium dasar yang bertahan hingga 6–8 minggu.`
+        }
+      }
+    };
+
+    const CALC_CONFIG = {
+      sayuran: {
+        label: `Sayuran`,
+        baseGram: { tabur: 17.5, kocor: 20, campur: 25 },
+        aux: {
+          tabur: { label: `Jarak Tabur Ideal`, value: `5–8 cm` },
+          kocor: { label: `Kebutuhan Air`, factorPerPlant: 0.4, unit: `liter` },
+          campur: { label: `Volume Media`, factorPerPlant: 5, unit: `liter media` }
+        },
+        advice: {
+          tabur: `Taburkan melingkar berjarak 5–8 cm dari batang sayur, tutup tanah tipis, lalu siram lembap.`,
+          kocor: `Larutkan dalam air bersih sesuai takaran liter di atas, aduk rata, lalu siramkan ke zona perakaran.`,
+          campur: `Aduk merata dengan tanah dan kompos di polibag/pot sebelum pindah tanam bibit sayuran.`
+        }
+      },
+      buah: {
+        label: `Tanaman Buah`,
+        baseGram: { tabur: 75, kocor: 60, campur: 125 },
+        aux: {
+          tabur: { label: `Jarak Tabur Ideal`, value: `20–40 cm` },
+          kocor: { label: `Kebutuhan Air`, factorPerPlant: 5, unit: `liter` },
+          campur: { label: `Lubang Tanam`, value: `40×40 cm` }
+        },
+        advice: {
+          tabur: `Sebar di alur melingkar mengikuti tepi tajuk terluar pohon atau pinggiran pot tabulampot, lalu tutup tanah.`,
+          kocor: `Siramkan larutan secara perlahan di zona akar serabut terluar menjelang fase pembungaan.`,
+          campur: `Campurkan dengan tanah galian dan kompos matang di dasar lubang tanam sebelum menanam bibit buah.`
+        }
+      },
+      hias: {
+        label: `Tanaman Hias`,
+        baseGram: { tabur: 12.5, kocor: 10, campur: 17.5 },
+        aux: {
+          tabur: { label: `Kedalaman Benam`, value: `1–2 cm` },
+          kocor: { label: `Kebutuhan Air`, factorPerPlant: 0.45, unit: `liter` },
+          campur: { label: `Volume Media`, factorPerPlant: 5, unit: `liter media` }
+        },
+        advice: {
+          tabur: `Tabur di tepi pot menjauhi batang, benamkan ringan 1–2 cm di lapisan atas media agar pot tetap bersih.`,
+          kocor: `Siram larutan ke media pot saja; hindari membasahi daun hias secara langsung.`,
+          campur: `Campurkan merata ke media porous saat melakukan repotting agar akar baru tumbuh rimbun.`
+        }
+      },
+      media: {
+        label: `Pot / Lahan`,
+        baseGram: { tabur: 125, kocor: 30, campur: 25 },
+        aux: {
+          tabur: { label: `Cakupan Lahan`, value: `per m²` },
+          kocor: { label: `Kebutuhan Air`, factorPerPlant: 3, unit: `liter` },
+          campur: { label: `Ukuran Pot Acuan`, value: `Ø 25 cm` }
+        },
+        advice: {
+          tabur: `Sebar merata per meter persegi bedengan, aduk ringan sedalam 10–15 cm, dan siram lembap sebelum tanam.`,
+          kocor: `Gunakan gembor untuk menyiramkan larutan secara merata guna menyegarkan media tanam bekas.`,
+          campur: `Aduk merata bersama tanah, kompos, dan sekam sebelum diisikan ke pot atau planter bag.`
+        }
+      }
+    };
+
+    const STAGE_MULT = {
+      awal: 1.0,
+      berbunga: 1.25,
+      rutin: 0.85
+    };
+
+    const STAGE_LABELS = {
+      awal: `Awal Tanam`,
+      berbunga: `Pembungaan/Buah`,
+      rutin: `Pemeliharaan Rutin`
+    };
+
+    const REVIEWS_DATA = [
+      {
+        category: `sayuran`,
+        name: `Pak Hendra Wijaya`,
+        role: `Petani Cabai & Tomat • Malang`,
+        initials: `HW`,
+        quote: `Setelah rutin tabur BONEVIA tiap dua minggu, bunga cabai jauh lebih tahan dan tidak gampang rontok saat hujan sore. Akar waktu cabut bibit sulaman juga kelihatan putih lebat.`
+      },
+      {
+        category: `hias`,
+        name: `Ibu Ratna Kusuma`,
+        role: `Kolektor Tanaman Hias • Bandung`,
+        initials: `RK`,
+        quote: `Saya pakai BONEVIA untuk mawar dan monstera di teras. Enaknya tidak bikin daun gosong kalau terlanjur kasih agak banyak, dan tidak berbau tajam setelah ditutup media tipis.`
+      },
+      {
+        category: `buah`,
+        name: `Mas Bagus Pratama`,
+        role: `Pegiat Tabulampot • Sleman`,
+        initials: `BP`,
+        quote: `Tabulampot jambu kristal dan jeruk santang saya dulu sering rontok bakal buahnya. Setelah dikocor BONEVIA sebulan sebelum berbunga, buahnya lebih padat dan kulitnya mulus.`
+      },
+      {
+        category: `sayuran`,
+        name: `Ibu Sari Lestari`,
+        role: `Komunitas Urban Farming • Bekasi`,
+        initials: `SL`,
+        quote: `Tanah pekarangan kami agak masam sehingga tomat sering kena busuk ujung buah. Setelah campur BONEVIA ke media polibag, pertumbuhan tomat jauh lebih stabil dan sehat.`
+      }
+    ];
+
+    let appState = {
+      activeMascot: `semangat`,
+      activeProductTab: `manfaat`,
+      guideCrop: `sayuran`,
+      guideMethod: `tabur`,
+      reviewFilter: `semua`,
+      calc: {
+        crop: `sayuran`,
+        method: `tabur`,
+        stage: `awal`,
+        plants: 15,
+        cycles: 1
+      },
+      savedPlans: []
+    };
+
+    function createMascotSVG(key, size) {
+      const s = size || 44;
+      let prop = ``;
+      let hat = ``;
+      let leafColor = `var(--olive)`;
+      let bodyAccent = `var(--primary-bright)`;
+
+      if (key === `semangat`) {
+        leafColor = `var(--primary-bright)`;
+        prop = `<path d="M56 36 L66 24 L62 24 L68 15 L55 26 L59 26 Z" fill="var(--primary-bright)" stroke="var(--primary)" stroke-width="1.5"></path>`;
+      } else if (key === `peneliti`) {
+        leafColor = `var(--olive)`;
+        prop = `
+          <circle cx="31" cy="39" r="5.5" fill="none" stroke="var(--primary)" stroke-width="2"></circle>
+          <circle cx="45" cy="39" r="5.5" fill="none" stroke="var(--primary)" stroke-width="2"></circle>
+          <line x1="36.5" y1="39" x2="39.5" y2="39" stroke="var(--primary)" stroke-width="2"></line>
+          <path d="M56 54 L63 54 L60 44 L59 44 Z" fill="var(--primary-container)" stroke="var(--primary)" stroke-width="1.6"></path>
+        `;
+      } else if (key === `petani`) {
+        leafColor = `var(--primary-mid)`;
+        hat = `<path d="M18 28 L38 14 L58 28 Z" fill="var(--tertiary-container)" stroke="var(--primary)" stroke-width="2" stroke-linejoin="round"></path>`;
+        prop = `<path d="M58 46 L66 38 L68 42 L61 50 Z" fill="var(--primary-mid)" stroke="var(--primary)" stroke-width="1.5"></path>`;
+      } else if (key === `pelindung`) {
+        leafColor = `var(--primary)`;
+        prop = `<path d="M54 36 L68 39 L66 51 C65 55 61 58 58 59 C55 58 52 55 52 51 Z" fill="var(--primary-container)" stroke="var(--primary)" stroke-width="2"></path><path d="M59 42 L59 53 M55 47 L63 47" stroke="var(--primary-mid)" stroke-width="2" stroke-linecap="round"></path>`;
+      } else {
+        leafColor = `var(--olive-light)`;
+        prop = `<path d="M56 52 L66 52 L64 60 L58 60 Z" fill="var(--tertiary-container)" stroke="var(--primary)" stroke-width="1.6"></path><circle cx="61" cy="45" r="4.5" fill="var(--primary-bright)" stroke="var(--primary)" stroke-width="1.5"></circle>`;
+      }
+
+      return `
+        <svg width="${s}" height="${s}" viewBox="0 0 76 76" aria-hidden="true">
+          <!-- Sprout leaf on top -->
+          <path d="M38 22 C38 11 49 8 52 14 C54 19 45 24 38 22 Z" fill="${leafColor}" stroke="var(--primary)" stroke-width="2"></path>
+          <path d="M38 22 C37 13 28 11 26 16 C24 20 32 24 38 22 Z" fill="var(--primary-bright)" stroke="var(--primary)" stroke-width="1.8"></path>
+          ${hat}
+          <!-- Bone-shaped friendly body -->
+          <path d="M27 25 C22 23 19 28 22 33 C23 35 23 47 22 49 C19 54 22 59 27 57 C30 56 32 58 38 58 C44 58 46 56 49 57 C54 59 57 54 54 49 C53 47 53 35 54 33 C57 28 54 23 49 25 C46 26 43 24 38 24 C33 24 30 26 27 25 Z" fill="var(--bone-ivory)" stroke="var(--primary)" stroke-width="2.2"></path>
+          <!-- Belly leaf emblem -->
+          <ellipse cx="38" cy="50" rx="8" ry="5" fill="${bodyAccent}" opacity="0.45"></ellipse>
+          <!-- Eyes & cheerful smile -->
+          <circle cx="31" cy="39" r="2.4" fill="var(--primary)"></circle>
+          <circle cx="45" cy="39" r="2.4" fill="var(--primary)"></circle>
+          <path d="M33 44 Q38 48 43 44" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"></path>
+          ${prop}
+        </svg>
+      `;
+    }
+
+    function renderMascotThumbnails() {
+      MASCOT_ORDER.forEach(function(key) {
+        const thumb = document.getElementById(`mascot-thumb-${key}`);
+        if (thumb) {
+          thumb.innerHTML = createMascotSVG(key, 44);
+        }
+      });
+    }
+
+    function selectMascot(key, skipSave) {
+      if (!MASCOT_DATA[key]) return;
+      appState.activeMascot = key;
+
+      MASCOT_ORDER.forEach(function(itemKey) {
+        const btn = document.getElementById(`mascot-btn-${itemKey}`);
+        if (btn) {
+          const isActive = itemKey === key;
+          btn.classList.toggle(`is-active`, isActive);
+          btn.setAttribute(`aria-selected`, isActive ? `true` : `false`);
+        }
+      });
+
+      const data = MASCOT_DATA[key];
+      const idx = MASCOT_ORDER.indexOf(key) + 1;
+      const stage = document.getElementById(`mascot-stage-svg`);
+      const tag = document.getElementById(`mascot-tag`);
+      const title = document.getElementById(`mascot-detail-title`);
+      const motto = document.getElementById(`mascot-detail-motto`);
+      const story = document.getElementById(`mascot-detail-story`);
+      const tip = document.getElementById(`mascot-detail-tip`);
+      const counter = document.getElementById(`mascot-counter`);
+
+      if (stage) stage.innerHTML = createMascotSVG(key, 154);
+      if (tag) tag.textContent = data.tag;
+      if (title) title.textContent = data.name;
+      if (motto) motto.textContent = data.motto;
+      if (story) story.textContent = data.story;
+      if (tip) tip.textContent = data.tip;
+      if (counter) counter.textContent = `Karakter ${idx} dari ${MASCOT_ORDER.length}`;
+
+      if (!skipSave) persistAppState();
+    }
+
+    function cycleMascot(delta) {
+      const currentIdx = MASCOT_ORDER.indexOf(appState.activeMascot);
+      const nextIdx = (currentIdx + delta + MASCOT_ORDER.length) % MASCOT_ORDER.length;
+      selectMascot(MASCOT_ORDER[nextIdx]);
+    }
+
+    function switchProductTab(tabKey, skipSave) {
+      appState.activeProductTab = tabKey;
+      const tabs = [`manfaat`, `dosis`];
+      tabs.forEach(function(k) {
+        const btn = document.getElementById(`tab-btn-${k}`);
+        const panel = document.getElementById(`tab-panel-${k}`);
+        const active = k === tabKey;
+        if (btn) {
+          btn.classList.toggle(`is-active`, active);
+          btn.setAttribute(`aria-selected`, active ? `true` : `false`);
+        }
+        if (panel) {
+          panel.classList.toggle(`is-active`, active);
+        }
+      });
+      if (!skipSave) persistAppState();
+    }
+
+    function selectGuideCrop(cropKey, skipSave) {
+      if (!GUIDE_CROPS[cropKey]) return;
+      appState.guideCrop = cropKey;
+      Object.keys(GUIDE_CROPS).forEach(function(k) {
+        const btn = document.getElementById(`guide-crop-${k}`);
+        if (btn) btn.classList.toggle(`is-active`, k === cropKey);
+      });
+      renderGuideOutput();
+      if (!skipSave) persistAppState();
+    }
+
+    function selectGuideMethod(methodKey, skipSave) {
+      const methods = [`tabur`, `kocor`, `campur`];
+      if (methods.indexOf(methodKey) === -1) return;
+      appState.guideMethod = methodKey;
+      methods.forEach(function(m) {
+        const btn = document.getElementById(`guide-method-${m}`);
+        if (btn) btn.classList.toggle(`is-active`, m === methodKey);
+      });
+      renderGuideOutput();
+      if (!skipSave) persistAppState();
+    }
+
+    function renderGuideOutput() {
+      const crop = GUIDE_CROPS[appState.guideCrop] || GUIDE_CROPS.sayuran;
+      const entry = crop[appState.guideMethod] || crop.tabur;
+      const methodNames = { tabur: `Metode Tabur`, kocor: `Metode Kocor`, campur: `Campur Media` };
+
+      const doseEl = document.getElementById(`guide-dose-value`);
+      const spoonEl = document.getElementById(`guide-dose-spoon`);
+      const intEl = document.getElementById(`guide-interval`);
+      const titleEl = document.getElementById(`guide-combo-title`);
+      const stepsEl = document.getElementById(`guide-steps`);
+      const tipEl = document.getElementById(`guide-tip`);
+
+      if (doseEl) doseEl.textContent = entry.dose;
+      if (spoonEl) spoonEl.textContent = entry.spoon;
+      if (intEl) intEl.textContent = entry.interval;
+      if (titleEl) titleEl.textContent = `${crop.label} — ${methodNames[appState.guideMethod]}`;
+      if (stepsEl) stepsEl.textContent = entry.steps;
+      if (tipEl) tipEl.textContent = entry.tip;
+    }
+
+    function syncPlantsFromSlider(val) {
+      const numEl = document.getElementById(`calc-plants-number`);
+      const parsed = Math.max(1, Math.min(500, parseInt(val, 10) || 1));
+      if (numEl) numEl.value = parsed;
+      updateCalculator();
+    }
+
+    function syncPlantsFromNumber(val) {
+      const sliderEl = document.getElementById(`calc-plants-slider`);
+      const parsed = Math.max(1, Math.min(500, parseInt(val, 10) || 1));
+      if (sliderEl) sliderEl.value = Math.min(200, parsed);
+      updateCalculator();
+    }
+
+    function formatGrams(grams) {
+      if (grams >= 1000) {
+        return `${(grams / 1000).toFixed(2).replace(`.`, `,`)} kg (${Math.round(grams).toLocaleString(`id-ID`)} g)`;
+      }
+      return `${Math.round(grams).toLocaleString(`id-ID`)} gram`;
+    }
+
+    function computeCalculatorResult() {
+      const cropEl = document.getElementById(`calc-crop`);
+      const methodEl = document.getElementById(`calc-method`);
+      const stageEl = document.getElementById(`calc-stage`);
+      const plantsEl = document.getElementById(`calc-plants-number`);
+      const cyclesEl = document.getElementById(`calc-cycles`);
+
+      const cropKey = cropEl ? cropEl.value : `sayuran`;
+      const methodKey = methodEl ? methodEl.value : `tabur`;
+      const stageKey = stageEl ? stageEl.value : `awal`;
+      const plants = Math.max(1, Math.min(500, parseInt(plantsEl ? plantsEl.value : 15, 10) || 1));
+      const cycles = Math.max(1, parseInt(cyclesEl ? cyclesEl.value : 1, 10) || 1);
+
+      const cfg = CALC_CONFIG[cropKey] || CALC_CONFIG.sayuran;
+      const base = cfg.baseGram[methodKey] || 15;
+      const mult = STAGE_MULT[stageKey] || 1.0;
+
+      const perPlant = Math.round(base * mult * 10) / 10;
+      const singleAppTotal = perPlant * plants;
+      const totalGrams = singleAppTotal * cycles;
+      const spoonEst = (perPlant / 10).toFixed(1).replace(`.`, `,`);
+
+      const auxCfg = cfg.aux[methodKey];
+      let auxValueText = auxCfg.value || ``;
+      if (auxCfg.factorPerPlant) {
+        const auxNum = (auxCfg.factorPerPlant * plants).toFixed(1).replace(`.`, `,`);
+        auxValueText = `${auxNum} ${auxCfg.unit}`;
+      }
+
+      let packRec = `1 Pack (500 g)`;
+      if (totalGrams > 5000) {
+        packRec = `${Math.ceil(totalGrams / 5000)} Karung (5 kg)`;
+      } else if (totalGrams > 1000) {
+        packRec = `${Math.ceil(totalGrams / 1000)} Pack (1 kg)`;
+      } else if (totalGrams > 500) {
+        packRec = `1 Pack (1 kg)`;
+      }
+
+      return {
+        cropKey: cropKey,
+        cropLabel: cfg.label,
+        methodKey: methodKey,
+        stageKey: stageKey,
+        stageLabel: STAGE_LABELS[stageKey],
+        plants: plants,
+        cycles: cycles,
+        perPlant: perPlant,
+        totalGrams: totalGrams,
+        spoonEst: spoonEst,
+        auxLabel: auxCfg.label,
+        auxValue: auxValueText,
+        packRec: packRec,
+        advice: cfg.advice[methodKey]
+      };
+    }
+
+    function updateCalculator(skipSave) {
+      const res = computeCalculatorResult();
+
+      appState.calc = {
+        crop: res.cropKey,
+        method: res.methodKey,
+        stage: res.stageKey,
+        plants: res.plants,
+        cycles: res.cycles
+      };
+
+      const totalOut = document.getElementById(`calc-total-output`);
+      const totalKg = document.getElementById(`calc-total-kg`);
+      const perPlantEl = document.getElementById(`calc-per-plant`);
+      const spoonEl = document.getElementById(`calc-spoon-est`);
+      const auxLabelEl = document.getElementById(`calc-aux-label`);
+      const auxValueEl = document.getElementById(`calc-aux-value`);
+      const packEl = document.getElementById(`calc-pack-rec`);
+      const adviceEl = document.getElementById(`calc-advice-text`);
+
+      if (totalOut) totalOut.textContent = formatGrams(res.totalGrams);
+      if (totalKg) {
+        const kgVal = (res.totalGrams / 1000).toFixed(2).replace(`.`, `,`);
+        totalKg.textContent = `Setara ${kgVal} kg untuk ${res.plants} unit (${res.cycles}× aplikasi)`;
+      }
+      if (perPlantEl) perPlantEl.textContent = `${res.perPlant} g`;
+      if (spoonEl) spoonEl.textContent = `± ${res.spoonEst} sdm`;
+      if (auxLabelEl) auxLabelEl.textContent = res.auxLabel;
+      if (auxValueEl) auxValueEl.textContent = res.auxValue;
+      if (packEl) packEl.textContent = res.packRec;
+      if (adviceEl) adviceEl.textContent = res.advice;
+
+      if (!skipSave) persistAppState();
+    }
+
+    function showCalcBanner(text) {
+      const banner = document.getElementById(`calc-status-banner`);
+      if (!banner) return;
+      banner.textContent = text;
+      banner.classList.add(`is-visible`);
+      window.setTimeout(function() {
+        banner.classList.remove(`is-visible`);
+      }, 3600);
+    }
+
+    function saveCurrentPlan() {
+      const res = computeCalculatorResult();
+      const methodLabelMap = { tabur: `Tabur`, kocor: `Kocor`, campur: `Campur Media` };
+      const plan = {
+        id: Date.now(),
+        cropLabel: res.cropLabel,
+        methodLabel: methodLabelMap[res.methodKey] || `Tabur`,
+        stageLabel: res.stageLabel,
+        plants: res.plants,
+        cycles: res.cycles,
+        perPlant: res.perPlant,
+        totalGrams: Math.round(res.totalGrams),
+        packRec: res.packRec
+      };
+
+      appState.savedPlans = [plan].concat(appState.savedPlans).slice(0, 12);
+      renderSavedPlans();
+      persistAppState();
+      showCalcBanner(`Rencana untuk ${res.plants} ${res.cropLabel} berhasil disimpan ke Catatan Kebun.`);
+    }
+
+    function deleteSavedPlan(id) {
+      appState.savedPlans = appState.savedPlans.filter(function(p) {
+        return p.id !== id;
+      });
+      renderSavedPlans();
+      persistAppState();
+    }
+
+    function clearAllPlans(btn) {
+      if (!appState.savedPlans.length) {
+        showCalcBanner(`Belum ada rencana tersimpan untuk dihapus.`);
+        return;
+      }
+      if (btn && btn.dataset.armed !== `true`) {
+        btn.dataset.armed = `true`;
+        btn.textContent = `Klik lagi untuk konfirmasi`;
+        window.setTimeout(function() {
+          if (btn.dataset.armed === `true`) {
+            btn.dataset.armed = `false`;
+            btn.textContent = `Hapus Semua`;
+          }
+        }, 4000);
+        return;
+      }
+      if (btn) {
+        btn.dataset.armed = `false`;
+        btn.textContent = `Hapus Semua`;
+      }
+      appState.savedPlans = [];
+      renderSavedPlans();
+      persistAppState();
+      showCalcBanner(`Semua catatan rencana pemupukan telah dibersihkan.`);
+    }
+
+    function renderSavedPlans() {
+      const container = document.getElementById(`saved-plans-container`);
+      if (!container) return;
+
+      if (!appState.savedPlans || appState.savedPlans.length === 0) {
+        container.innerHTML = `
+          <div class="empty-state">
+            Belum ada rencana pemupukan tersimpan. Atur jenis tanaman dan jumlahnya di kalkulator, lalu tekan <strong>Simpan ke Catatan Kebun</strong>.
+          </div>
+        `;
+        return;
+      }
+
+      const cardsHtml = appState.savedPlans.map(function(plan) {
+        return `
+          <div class="saved-plan-card">
+            <div>
+              <span class="section-eyebrow" style="margin-bottom:var(--space-xs);">${plan.methodLabel} • ${plan.stageLabel}</span>
+              <h4 class="card-title" style="font-size:1.0625rem;margin-bottom:var(--space-xs);">${plan.cropLabel} (${plan.plants} unit)</h4>
+              <p style="margin:0;font-size:0.9375rem;color:var(--on-surface-body);">
+                Total: <strong>${formatGrams(plan.totalGrams)}</strong> (${plan.cycles}× aplikasi) • ${plan.perPlant} g/unit
+              </p>
+              <p style="margin:var(--space-xs) 0 0 0;font-size:0.8125rem;color:var(--on-surface-variant);">Rekomendasi: ${plan.packRec}</p>
+            </div>
+            <button type="button" class="btn btn-outline btn-sm" onclick="deleteSavedPlan(${plan.id})">
+              Hapus Catatan
+            </button>
+          </div>
+        `;
+      }).join(``);
+
+      container.innerHTML = `<div class="saved-plans-list">${cardsHtml}</div>`;
+    }
+
+    function downloadPlanSummary() {
+      const res = computeCalculatorResult();
+      const methodLabelMap = { tabur: `Tabur`, kocor: `Kocor`, campur: `Campur Media` };
+      const lines = [
+        `RINGKASAN DOSIS BONEVIA ORGANIC BONE MEAL`,
+        `========================================`,
+        `Tagline: NATURAL NUTRITION. SUSTAINABLE FUTURE.`,
+        `Dari Limbah, untuk Kehidupan Hijau`,
+        ``,
+        `Jenis Tanaman   : ${res.cropLabel}`,
+        `Metode Aplikasi : ${methodLabelMap[res.methodKey]}`,
+        `Fase Tanaman    : ${res.stageLabel}`,
+        `Jumlah Unit     : ${res.plants}`,
+        `Periode         : ${res.cycles} kali aplikasi`,
+        `Dosis / Unit    : ${res.perPlant} gram (± ${res.spoonEst} sendok makan)`,
+        `Total Kebutuhan : ${formatGrams(res.totalGrams)}`,
+        `${res.auxLabel} : ${res.auxValue}`,
+        `Saran Kemasan   : ${res.packRec}`,
+        ``,
+        `Panduan Singkat:`,
+        `${res.advice}`
+      ].join(`\n`);
+
+      if (window.notebookAppApi && typeof window.notebookAppApi.triggerFileDownload === `function`) {
+        window.notebookAppApi.triggerFileDownload({
+          content: lines,
+          contentType: `text/plain`,
+          encoding: `UTF-8`,
+          filename: `rencana-dosis-bonevia.txt`
+        });
+        showCalcBanner(`Ringkasan dosis diunduh sebagai rencana-dosis-bonevia.txt`);
+      } else {
+        showCalcBanner(`Ringkasan dosis siap: ${formatGrams(res.totalGrams)} untuk ${res.plants} unit.`);
+      }
+    }
+
+    function filterReviews(category, skipSave) {
+      appState.reviewFilter = category;
+      const cats = [`semua`, `sayuran`, `buah`, `hias`];
+      cats.forEach(function(c) {
+        const btn = document.getElementById(`rev-filter-${c}`);
+        if (btn) btn.classList.toggle(`is-active`, c === category);
+      });
+
+      const grid = document.getElementById(`reviews-grid`);
+      if (!grid) return;
+
+      const filtered = REVIEWS_DATA.filter(function(r) {
+        return category === `semua` || r.category === category;
+      });
+
+      grid.innerHTML = filtered.map(function(r) {
+        return `
+          <article class="review-card">
+            <div>
+              <div class="review-stars" aria-label="Penilaian positif">
+                <i data-lucide="star" width="16" height="16" aria-hidden="true"></i>
+                <i data-lucide="star" width="16" height="16" aria-hidden="true"></i>
+                <i data-lucide="star" width="16" height="16" aria-hidden="true"></i>
+                <i data-lucide="star" width="16" height="16" aria-hidden="true"></i>
+                <i data-lucide="star" width="16" height="16" aria-hidden="true"></i>
+              </div>
+              <p class="review-quote" style="margin-top:var(--space-sm);">“${r.quote}”</p>
+            </div>
+            <div class="review-author">
+              <span class="author-avatar" aria-hidden="true">${r.initials}</span>
+              <div>
+                <span class="author-name">${r.name}</span>
+                <span class="author-meta">${r.role}</span>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join(``);
+
+      refreshIcons();
+      if (!skipSave) persistAppState();
+    }
+
+    function toggleFaq(btn) {
+      if (!btn) return;
+      const item = btn.closest(`.faq-item`);
+      if (!item) return;
+      const isOpen = item.classList.contains(`is-open`);
+      item.classList.toggle(`is-open`, !isOpen);
+      btn.setAttribute(`aria-expanded`, !isOpen ? `true` : `false`);
+    }
+
+    function openInfoModal(type) {
+      const backdrop = document.getElementById(`info-modal-backdrop`);
+      const eyebrow = document.getElementById(`modal-eyebrow`);
+      const title = document.getElementById(`modal-title`);
+      const body = document.getElementById(`modal-body-content`);
+      if (!backdrop || !body) return;
+
+      if (type === `manfaat`) {
+        if (eyebrow) eyebrow.textContent = `DETAIL NUTRISI BONEVIA`;
+        if (title) title.textContent = `Manfaat Fosfor (P₂O₅) & Kalsium (CaO)`;
+        body.innerHTML = `
+          <div style="display:grid;gap:var(--space-md);">
+            <div class="benefit-card">
+              <h3 class="card-title">1. Merangsang Akar Lebih Cepat &amp; Rimbun</h3>
+              <p style="margin:0;">Fosfor (P₂O₅) berperan sebagai bahan bakar energi ATP bagi ujung akar baru. Sangat ideal diberikan saat semai lanjut, pindah tanam bibit, atau pemulihan tanaman pasca-repotting.</p>
+            </div>
+            <div class="benefit-card">
+              <h3 class="card-title">2. Memperbanyak Bunga &amp; Mengurangi Rontok</h3>
+              <p style="margin:0;">Asupan P₂O₅ mendorong peralihan fase vegetatif menuju pembungaan yang lebat, sementara Kalsium (CaO) memperkuat tangkai bunga dan dinding sel kulit buah.</p>
+            </div>
+            <div class="benefit-card">
+              <h3 class="card-title">3. Menstabilkan pH Tanah Asam</h3>
+              <p style="margin:0;">Kalsium alami membantu menyangga tanah masam secara perlahan tanpa kejut kimia, menjaga aktivitas mikroba baik, dan memaksimalkan penyerapan unsur hara lain.</p>
+            </div>
+            <div class="benefit-card">
+              <h3 class="card-title">4. Ramah Lingkungan &amp; Mengurangi Limbah</h3>
+              <p style="margin:0;">Mengubah limbah tulang ayam menjadi tepung nutrisi bernilai guna tinggi (<em>circular agriculture</em>), sekaligus meminimalkan pencemaran air akibat pupuk cepat larut.</p>
+            </div>
+          </div>
+        `;
+      } else {
+        if (eyebrow) eyebrow.textContent = `PANDUAN LENGKAP PEMAKAIAN`;
+        if (title) title.textContent = `Cara Penggunaan & Dosis BONEVIA`;
+        body.innerHTML = `
+          <div style="display:grid;gap:var(--space-md);">
+            <p style="margin:0;">Gunakan panduan ringkas berikut sesuai jenis tanaman dan metode aplikasi pilihan Anda (acuan: 1 sendok makan peres ≈ 10 gram):</p>
+            <div class="table-wrap">
+              <table class="dose-table">
+                <thead>
+                  <tr>
+                    <th>Tanaman</th>
+                    <th>Tabur</th>
+                    <th>Kocor</th>
+                    <th>Campur Media</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Sayuran</strong></td>
+                    <td>15–20 g / tanaman tiap 14 hari</td>
+                    <td>20 g / 2 L air untuk 4–5 tanaman</td>
+                    <td>25 g per polibag saat olah media</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Buah</strong></td>
+                    <td>50–100 g / pohon tiap 30 hari</td>
+                    <td>60 g / 5 L air di tepi tajuk</td>
+                    <td>100–150 g per lubang tanam</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Tanaman Hias</strong></td>
+                    <td>10–15 g / pot tiap 21–30 hari</td>
+                    <td>10 g / 1,5 L air untuk 3–4 pot</td>
+                    <td>15–20 g per 5 L media tanam</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Pot / Lahan</strong></td>
+                    <td>100–150 g / m² bedengan</td>
+                    <td>30 g / 3 L siram lahan</td>
+                    <td>20–30 g per pot diameter 25 cm</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="mascot-tip-box" style="margin:0;">
+              <span class="mascot-tip-label">Langkah Praktis 3T</span>
+              <span><strong>Tabur</strong> di lingkaran zona akar (hindari menempel langsung pada batang lunak), <strong>Tutup</strong> tipis dengan tanah/kompos, lalu <strong>Tiram/Siram</strong> agar mikroba segera mengurai nutrisi.</span>
+            </div>
+          </div>
+        `;
+      }
+
+      backdrop.classList.add(`is-open`);
+      const closeBtn = document.getElementById(`modal-close-btn`);
+      if (closeBtn) closeBtn.focus();
+    }
+
+    function closeInfoModal() {
+      const backdrop = document.getElementById(`info-modal-backdrop`);
+      if (backdrop) backdrop.classList.remove(`is-open`);
+    }
+
+    function handleBackdropClick(event) {
+      if (event && event.target && event.target.id === `info-modal-backdrop`) {
+        closeInfoModal();
+      }
+    }
+
+    function refreshIcons() {
+      if (window.lucide && typeof window.lucide.createIcons === `function`) {
+        window.lucide.createIcons();
+      }
+    }
+
+    async function persistAppState() {
+      if (window.notebookAppApi && typeof window.notebookAppApi.setAppState === `function`) {
+        try {
+          await window.notebookAppApi.setAppState(appState);
+        } catch (err) {
+          // Graceful fallback if host storage rejects transiently
+        }
+      }
+    }
+
+    async function initApp() {
+      renderMascotThumbnails();
+
+      if (window.notebookAppApi && typeof window.notebookAppApi.getAppState === `function`) {
+        try {
+          const saved = await window.notebookAppApi.getAppState();
+          if (saved && typeof saved === `object`) {
+            if (saved.activeMascot && MASCOT_DATA[saved.activeMascot]) {
+              appState.activeMascot = saved.activeMascot;
+            }
+            if (saved.activeProductTab === `manfaat` || saved.activeProductTab === `dosis`) {
+              appState.activeProductTab = saved.activeProductTab;
+            }
+            if (saved.guideCrop && GUIDE_CROPS[saved.guideCrop]) {
+              appState.guideCrop = saved.guideCrop;
+            }
+            if (saved.guideMethod) {
+              appState.guideMethod = saved.guideMethod;
+            }
+            if (saved.reviewFilter) {
+              appState.reviewFilter = saved.reviewFilter;
+            }
+            if (saved.calc && typeof saved.calc === `object`) {
+              appState.calc = Object.assign({}, appState.calc, saved.calc);
+            }
+            if (Array.isArray(saved.savedPlans)) {
+              appState.savedPlans = saved.savedPlans;
+            }
+          }
+        } catch (err) {
+          // Proceed with default initial state
+        }
+      }
+
+      const cropEl = document.getElementById(`calc-crop`);
+      const methodEl = document.getElementById(`calc-method`);
+      const stageEl = document.getElementById(`calc-stage`);
+      const plantsNumEl = document.getElementById(`calc-plants-number`);
+      const plantsSliderEl = document.getElementById(`calc-plants-slider`);
+      const cyclesEl = document.getElementById(`calc-cycles`);
+
+      if (cropEl && appState.calc.crop) cropEl.value = appState.calc.crop;
+      if (methodEl && appState.calc.method) methodEl.value = appState.calc.method;
+      if (stageEl && appState.calc.stage) stageEl.value = appState.calc.stage;
+      if (plantsNumEl && appState.calc.plants) plantsNumEl.value = appState.calc.plants;
+      if (plantsSliderEl && appState.calc.plants) plantsSliderEl.value = Math.min(200, appState.calc.plants);
+      if (cyclesEl && appState.calc.cycles) cyclesEl.value = String(appState.calc.cycles);
+
+      selectMascot(appState.activeMascot, true);
+      switchProductTab(appState.activeProductTab, true);
+      selectGuideCrop(appState.guideCrop, true);
+      selectGuideMethod(appState.guideMethod, true);
+      updateCalculator(true);
+      renderSavedPlans();
+      filterReviews(appState.reviewFilter, true);
+
+      document.addEventListener(`keydown`, function(e) {
+        if (e.key === `Escape`) closeInfoModal();
+      });
+
+      refreshIcons();
+
+      if (window.notebookAppApi && typeof window.notebookAppApi.notifyAppReady === `function`) {
+        window.notebookAppApi.notifyAppReady();
+      }
+    }
+
+    document.addEventListener(`DOMContentLoaded`, initApp);
+  </script>
+</body>
+</html>
